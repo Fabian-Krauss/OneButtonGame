@@ -47,7 +47,7 @@ public class PlayerMovment : MonoBehaviour
     void OnCollisionEnter2D(Collision2D hit)
     {
         isGrounded = true;
-        if(hit.transform.gameObject.name == "obst_chest")
+        if(hit.transform.gameObject.name != "ground")
         {
             Debug.Log("Collide");
             SceneManager.LoadScene("MainMenu");
