@@ -15,6 +15,7 @@ public class PlayerMovment : MonoBehaviour
     public Vector2 jump;
     public bool isGrounded = true;
     public float score = 0;
+    public bool DEBUG = false;
 
 
     // Start is called before the first frame update
@@ -50,7 +51,9 @@ public class PlayerMovment : MonoBehaviour
         if(hit.transform.gameObject.name != "ground")
         {
             Debug.Log("Collide");
-            SceneManager.LoadScene("MainMenu");
+            if (!DEBUG){
+                SceneManager.LoadScene("MainMenu");
+            }
         }
     }
 
