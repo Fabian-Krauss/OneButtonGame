@@ -24,9 +24,10 @@ public class SkeletonMovement : MonoBehaviour
         time += Time.deltaTime;
         if(time >= changeDirectionTime)
         {
-            Debug.Log("Change Direction " + my_Rigidbody.name);
+            
             time = 0.0f;
-            my_Rigidbody.velocity = new Vector2(-speedFactor, my_Rigidbody.velocity.y);
+            my_Rigidbody.velocity = new Vector2(-my_Rigidbody.velocity.x/Mathf.Abs(my_Rigidbody.velocity.x)*speedFactor, my_Rigidbody.velocity.y);
+            Debug.Log("Change Direction " + my_Rigidbody.name + " velocity: " + my_Rigidbody.velocity);
             changeDirectionTime = Random.Range(changeDirectionTimeLow, changeDirectionTimeHigh);
         }
     }

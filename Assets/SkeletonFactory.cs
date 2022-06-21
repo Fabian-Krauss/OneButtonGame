@@ -36,6 +36,7 @@ public class SkeletonFactory : MonoBehaviour
                 spawnTime = Random.Range(1.0f, 3.0f);
             }
         }
+
     }
 
     void addSkeleton()
