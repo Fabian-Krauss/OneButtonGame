@@ -42,7 +42,7 @@ public class chestFactory : MonoBehaviour
     {
         if(chestCount < maxChestCount)
         {
-            Debug.Log("chest Count: " + chestCount);
+            // Debug.Log("chest Count: " + chestCount);
             instantiatePosition =  Player.position.x + 1000;
             Vector2 spawnPosition = new Vector2(instantiatePosition, 45);
             GameObject chestObj = Instantiate(chest.gameObject, spawnPosition, Quaternion.identity);

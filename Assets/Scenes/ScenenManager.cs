@@ -9,12 +9,17 @@ public class ScenenManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+   
     }
 
     // Update is called once per frame
     void Update()
     {
+        // load PiratesMainScene on space key press
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("PiratesMainScene");
+        }
         
     }
 

@@ -40,7 +40,7 @@ public class CoinFactory : MonoBehaviour
     {
         if(coinCount < maxCoinCount)
         {
-            Debug.Log("Coin Count: " + coinCount);
+            // Debug.Log("Coin Count: " + coinCount);
             instantiatePosition =  Player.position.x + 1000;
             Vector2 spawnPosition = new Vector2(instantiatePosition, 35);
             GameObject coinObj = Instantiate(coin.gameObject, spawnPosition, Quaternion.identity);

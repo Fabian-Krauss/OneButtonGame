@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkeletonMovement : MonoBehaviour
 {
-
+    public GameObject Skeleton;
     public Rigidbody2D my_Rigidbody;
     public float changeDirectionTime = 1.0f;
     public float changeDirectionTimeLow = 2.0f;
@@ -24,10 +24,9 @@ public class SkeletonMovement : MonoBehaviour
         time += Time.deltaTime;
         if(time >= changeDirectionTime)
         {
-            
             time = 0.0f;
             my_Rigidbody.velocity = new Vector2(-my_Rigidbody.velocity.x/Mathf.Abs(my_Rigidbody.velocity.x)*speedFactor, my_Rigidbody.velocity.y);
-            Debug.Log("Change Direction " + my_Rigidbody.name + " velocity: " + my_Rigidbody.velocity);
+            // Debug.Log("Change Direction " + my_Rigidbody.name + " velocity: " + my_Rigidbody.velocity);
             changeDirectionTime = Random.Range(changeDirectionTimeLow, changeDirectionTimeHigh);
         }
     }
@@ -36,9 +35,13 @@ public class SkeletonMovement : MonoBehaviour
     {
         if(hit.transform.gameObject.name != "ground" && hit.transform.gameObject.name != "Player")
         {
-            Physics2D.IgnoreCollision(hit.collider, GetComponent<Collider2D>());
+            my_Rigidbody.velocity = new Vector2(-my_Rigidbody.velocity.x/Mathf.Abs(my_Rigidbody.velocity.x)*speedFactor, my_Rigidbody.velocity.y);
+            // Physics2D.IgnoreCollision(hit.collider, GetComponent<Collider2D>());
         }
-
+        if(hit.transform.gameObject.tag == "barrel"){
+            Debug.Log("Delete Skeleton");
+            Destroy(Skeleton);
+        }
     }
 
     // Update is called once per frame
