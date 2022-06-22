@@ -20,6 +20,7 @@ public class PlayerMovment : MonoBehaviour
     public AudioSource jumpSound;
     public AudioSource doubleJumpSound;
     public AudioSource dieSound;
+    public bool enableJump = true;
 
         
     // Start is called before the first frame update
@@ -83,23 +84,25 @@ public class PlayerMovment : MonoBehaviour
     void Update()
     {
         my_Rigidbody.velocity = new Vector2(speedFactor,my_Rigidbody.velocity.y);
-        if (Input.GetKeyDown("space") && isGrounded)
-        {   
-            // my_Rigidbody.velocity = new Vector2(my_Rigidbody.velocity.x, jumpForce);
-            my_Rigidbody.AddForce(jump * jumpForce, ForceMode2D.Impulse);
-            isGrounded = false;
-            enableDoubleJump = true;
-            // add a sound effect
-            jumpSound.Play();
-            
-        }
-        //Implement double jump
-        else if (Input.GetKeyDown("space") && !isGrounded && enableDoubleJump)
-        {
-            my_Rigidbody.AddForce(jump * jumpForce, ForceMode2D.Impulse);
-            enableDoubleJump = false;
-            isGrounded = false;
-            doubleJumpSound.Play();
+        if (enableJump){
+            if (Input.GetKeyDown("space") && isGrounded)
+            {   
+                // my_Rigidbody.velocity = new Vector2(my_Rigidbody.velocity.x, jumpForce);
+                my_Rigidbody.AddForce(jump * jumpForce, ForceMode2D.Impulse);
+                isGrounded = false;
+                enableDoubleJump = true;
+                // add a sound effect
+                jumpSound.Play();
+                
+            }
+            //Implement double jump
+            else if (Input.GetKeyDown("space") && !isGrounded && enableDoubleJump)
+            {
+                my_Rigidbody.AddForce(jump * jumpForce, ForceMode2D.Impulse);
+                enableDoubleJump = false;
+                isGrounded = false;
+                doubleJumpSound.Play();
+            }
         }
 
         score++;

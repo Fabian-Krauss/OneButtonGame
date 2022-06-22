@@ -114,7 +114,69 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: boxes_and_barrels_0
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 139
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 69.5, y: 13}
+        - {x: 69.5, y: -124}
+        - {x: -69.5, y: -124}
+        - {x: -69.5, y: 13}
+        - {x: -48.5, y: 13}
+        - {x: -48.5, y: 124}
+        - {x: 63.5, y: 124}
+        - {x: 63.5, y: 13}
+      physicsShape:
+      - - {x: -69.5, y: -124}
+        - {x: -69.5, y: 13}
+        - {x: -48.5, y: 13}
+        - {x: -48.5, y: 124}
+        - {x: 63.5, y: 124}
+        - {x: 63.5, y: 13}
+        - {x: 69.5, y: 13}
+        - {x: 69.5, y: -124}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2279590c3bbd7ba4ca695ad74740734c
+      internalID: 1787261297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boxes_and_barrels_1
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 34
+        width: 132
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -39.299683, y: -99.14073}
+        - {x: -39.299683, y: -67.12919}
+        - {x: -12.238342, y: -67.12919}
+        - {x: -12.238342, y: -99.14073}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 233f667c5f191c1459633a0b2dc1be71
+      internalID: 1612159484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -125,7 +187,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      boxes_and_barrels_1: 1612159484
+      boxes_and_barrels_0: 1787261297
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
