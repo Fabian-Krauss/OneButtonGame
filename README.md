@@ -52,9 +52,26 @@ Ein weiterer Vorteil hierbei ist, dass wir nun das bereitgestellte Asset-Set nut
 - Hinzufügen von Musik & Tönen für verschiedene Aktionen
   - **TODO: Erklärung**
 - Implementierung des Double Jumps
-  - **TODO: Erklärung**
+  - wenn der Spieler sich in der Luft befindet, kann er einmalig durch Drücken der Leertaste "erneut springen". Hierbei wird die aktuelle Position und Geschwindigkeit in der Luft benutzt und ausgehend davon, ein neuer Sprung ausgeführt
+  - ein zweiter Sprung am Ende der Flugphase ist also genauso effektiv, wie ein zweiter Sprung direkt nach dem Ersten 
 
 Somit ist Aufgabe 2 abgeschlossen und für das Abschließen von Aufgabe 3 fehlt nur noch das weitere Interactable.
 
-### Aufgabe 3
-TODO
+### Aufgabe 3 & 4
+**28.06.22**
+- als zweites Interactable wurde ein Glas Bier hinzugefügt, das durch Halten der Leertaste eingesammelt werden kann und den Spieler für 5 Sekunden unsterblich macht
+  - in diesem Modus werden alle Objekte, mit denen der Spieler normalerweise kollidiert wäre, zerstört
+
+Mit diesem Item ist Aufgabe 3 abgeschlossen! :)
+
+- Hinzufügen von Marinesoldaten, die auf den Spieler zulaufen und in zufälligen Abständen mit ihrer Pistole schießen
+  - die Kugel wird nicht von der Schwerkraft beeinflusst und fliegt mit konstanter Gesschwindigkeit durch alle Hindernisse hindurch ohne mit ihnen zu interagieren
+- wie bei den anderen Hindernissen, werden auch die Marinesoldaten mittels einer Factory in zufälligen Zeitabständen erzeugt
+- um die Kanone aus Aufgabe 3 wurde eine "Sperrzone" eingerichtet, in der keine Gegner spawnen können, sodass das Interactable nicht beeinträchtigt wird
+- verschiedene Deko-Elemente wurden zum ersten Level hinzugefügt
+  - neue Assets für Fische, Muscheln, Steine, Schatzkarte und Schatztruhe
+- Ausarbeitung einer Geschichte für das Spiel und Implementierung des Spielendes im ersten Level
+  - der Spieler muss in eine Schatzkarte springen, die Hinweise darauf gibt, wo sich der verlorene Papagei des Piraten befindet. Über die 5 Level des Spiels erhält der Pirat nun weitere Hinweise über den Aufenthaltsort und findet schließlich seinen Papagei auf dem Schiff der Marinesoldaten
+  - über die Schatzkarte gelangt man in den Endscreen eines jeden Levels, in dem die Geschichte fortgesetzt und der Score angezeigt wird
+  
+An festen Zielen fehlt uns somit nur noch die farbliche Vorwarnung des Spielers über Hindernisse am rechten Bildschirmrand und die Implementierung bzw. Verbesserung der Sounds im Spiel. Abschließend werden dann die restlichen vier Spiellevel erstellt.
