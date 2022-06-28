@@ -15,6 +15,7 @@ public class PlayerMovment : MonoBehaviour
     public Vector2 jump;
     public bool isGrounded = true;
     public float score = 0;
+    public ScoreScript scoreS;
     public bool DEBUG = false;
     public bool enableDoubleJump = false;
     public AudioSource jumpSound;
@@ -138,6 +139,7 @@ public class PlayerMovment : MonoBehaviour
 
         score++;
         TextFieldScore.text = "Score: " + ((int)(score/10)).ToString();
+        scoreS.score = score;
         // increase speed of the player proportional to the score
         speedFactor = 200f + (score/300);
         //increase jump force proportional to the score

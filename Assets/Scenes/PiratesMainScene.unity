@@ -3766,6 +3766,7 @@ MonoBehaviour:
   jump: {x: 0, y: 0}
   isGrounded: 1
   score: 0
+  scoreS: {fileID: 11400000, guid: 662bb5f217fb04e10a7c461f53b15b8b, type: 2}
   DEBUG: 0
   enableDoubleJump: 0
   jumpSound: {fileID: 792434881}

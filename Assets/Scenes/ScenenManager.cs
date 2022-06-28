@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class ScenenManager : MonoBehaviour
 {
+
+    private int sceneCounter = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,31 @@ public class ScenenManager : MonoBehaviour
     {
         Debug.Log("On Change");
         SceneManager.LoadScene("PiratesMainScene");
+    }
+
+    public void loadNextScene(){
+      sceneCounter++;
+      switch (sceneCounter)
+      {
+          case 1:
+             SceneManager.LoadScene("Level2");
+          break;
+          case 2:
+              SceneManager.LoadScene("Level3");
+          break;
+          case 3:
+              SceneManager.LoadScene("Level4");
+          break;
+          case 4:
+              SceneManager.LoadScene("Level5");
+          break;
+           case 5:
+              SceneManager.LoadScene("Level5");
+          break;
+
+          default:
+          break;
+      }
     }
 
     public void quit()
