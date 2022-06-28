@@ -11,11 +11,12 @@ public class PlayerMovment : MonoBehaviour
 
     public Text TextFieldScore;
     public float speedFactor = 200f;
-    public float jumpForce = 25000.0f;
+    public float jumpForce = 250.0f;
     public Vector2 jump;
     public bool isGrounded = true;
     public float score = 0;
     public ScoreScript scoreS;
+    public xPosScript xPosS;
     public bool DEBUG = false;
     public bool enableDoubleJump = false;
     public AudioSource jumpSound;
@@ -44,6 +45,7 @@ public class PlayerMovment : MonoBehaviour
 
     void FixedUpdate()
     {
+          score++;
         // make player fall down faster
         if (my_Rigidbody.velocity.y < 0)
         {
@@ -81,7 +83,9 @@ public class PlayerMovment : MonoBehaviour
                     my_Rigidbody.AddForce(Vector2.down * jumpForce*2);
 
                     my_Rigidbody.velocity = new Vector2(-20, 0);
-                    SceneManager.LoadScene("MainMenu");
+
+                    xPosS.xValue = transform.position.x;
+                    SceneManager.LoadScene("EndScreen");
                     // StartCoroutine(playerDie());
                 }
                 else{
@@ -119,7 +123,7 @@ public class PlayerMovment : MonoBehaviour
             else if (Input.GetKeyDown("space") && !isGrounded && enableDoubleJump)
             {
                 if(Time.realtimeSinceStartup - timeAtJump > timeBetweenJumps ){
-                       my_Rigidbody.velocity = new Vector2(my_Rigidbody.velocity.x,0);
+                    my_Rigidbody.velocity = new Vector2(my_Rigidbody.velocity.x,0);
                     my_Rigidbody.AddForce(jump * jumpForce, ForceMode2D.Impulse);
                     enableDoubleJump = false;
                     isGrounded = false;
@@ -139,10 +143,10 @@ public class PlayerMovment : MonoBehaviour
         }
 
         if(lBar.currentLife <= 0){
-             SceneManager.LoadScene("MainMenu");  
+             xPosS.xValue = transform.position.x;
+             SceneManager.LoadScene("EndScreen");  
         }
 
-        score++;
         TextFieldScore.text = "Score: " + ((int)(score/10)).ToString();
         scoreS.score = score;
         // increase speed of the player proportional to the score

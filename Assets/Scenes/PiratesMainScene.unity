@@ -4088,10 +4088,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 200
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 12
+  m_GravityScale: 15
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4138,11 +4138,12 @@ MonoBehaviour:
   my_Rigidbody: {fileID: 494944699}
   TextFieldScore: {fileID: 969671992}
   speedFactor: 200
-  jumpForce: 20000
+  jumpForce: 15000
   jump: {x: 0, y: 0}
   isGrounded: 1
   score: 0
   scoreS: {fileID: 11400000, guid: 662bb5f217fb04e10a7c461f53b15b8b, type: 2}
+  xPosS: {fileID: 11400000, guid: 56e2948bd924945ea8b51c7cffe044de, type: 2}
   DEBUG: 1
   enableDoubleJump: 0
   jumpSound: {fileID: 792434881}
@@ -5506,7 +5507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624282662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7995.6, y: 158.8, z: 0}
+  m_LocalPosition: {x: 7693, y: 158.8, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -7668,6 +7669,7 @@ MonoBehaviour:
   startLife: 1
   currentLife: 1
   timeToLifeWithoutLemon: 20
+  lifeGained: 1
   time: 0
 --- !u!1 &1110434621
 GameObject:

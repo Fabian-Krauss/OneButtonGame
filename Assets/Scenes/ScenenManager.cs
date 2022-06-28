@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ScenenManager : MonoBehaviour
 {
 
-    private int sceneCounter = 0;
+    public int sceneCounter = 0;
     // Start is called before the first frame update
     void Start()
     {
