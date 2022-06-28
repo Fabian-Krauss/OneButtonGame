@@ -18,7 +18,7 @@ public class ScenenManager : MonoBehaviour
         // load PiratesMainScene on space key press
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("PiratesMainScene");
+            // SceneManager.LoadScene("PiratesMainScene");
         }
         
     }

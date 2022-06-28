@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 3c6ac62513bb05e49b91d3658d6953f5
+  - enabled: 1
+    path: Assets/Scenes/SchatzkartenScene.unity
+    guid: 9c69f33a0bdea4a0f93c280e27cce093
   m_configObjects: {}

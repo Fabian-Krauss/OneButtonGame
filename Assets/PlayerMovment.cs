@@ -63,7 +63,10 @@ public class PlayerMovment : MonoBehaviour
     {
         isGrounded = true;
         enableDoubleJump = false;
-        if(hit.transform.gameObject.name != "ground")
+        if(hit.transform.gameObject.name == "schatzkarte"){
+              SceneManager.LoadScene("SchatzkartenScene");
+        }
+        else if(hit.transform.gameObject.name != "ground")
         {
             if (!DEBUG){
                 if(!beerScript.zerfickerModus){
@@ -84,6 +87,7 @@ public class PlayerMovment : MonoBehaviour
                 }
             }
         }
+          
     }
 
     // IEnumerator playerDie()
