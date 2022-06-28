@@ -33,7 +33,7 @@ public class BarrelFactory : MonoBehaviour
             if(time >= spawnTime)
             {
                 time = 0.0f;
-                if(designChecker.isPlaceOk(Player.position.x + 1000))addBarrel();
+                if(designChecker.isPlaceOk(Player.position.x + 1000, 2))addBarrel();
                 spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
             }
         }

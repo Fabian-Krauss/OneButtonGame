@@ -32,7 +32,7 @@ public class SkeletonFactory : MonoBehaviour
             if(time >= spawnTime)
             {
                 time = 0.0f;
-                if(designChecker.isPlaceOk(Player.position.x + 1000))addSkeleton();
+                if(designChecker.isPlaceOk(Player.position.x + 1000, 1))addSkeleton();
                 spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
             }
         }

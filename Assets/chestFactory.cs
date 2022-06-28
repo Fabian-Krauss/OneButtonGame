@@ -5,7 +5,7 @@ using UnityEngine;
 public class chestFactory : MonoBehaviour
 {
     public GameObject chest;
-    private GameObject[] allChests;
+    public GameObject[] allChests;
     public int chestCount = 0;
     public int maxChestCount = 1000;
     public float spawnTime = 1.0f;
@@ -32,7 +32,7 @@ public class chestFactory : MonoBehaviour
             if(time >= spawnTime)
             { 
                 time = 0.0f;
-                if(designChecker.isPlaceOk(Player.position.x + 1000))addchest();
+                if(designChecker.isPlaceOk(Player.position.x + 1000, 0))addchest();
                 spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
             }
         }
