@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class progressBar : MonoBehaviour
 {
     public Slider slider;
-    public float targetHoldTime = 1.0f;
+    public float targetHoldTime = 0.6f;
     public float holdTime = 0.0f;
     // Start is called before the first frame update
 

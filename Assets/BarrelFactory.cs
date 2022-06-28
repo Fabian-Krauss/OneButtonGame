@@ -14,6 +14,7 @@ public class BarrelFactory : MonoBehaviour
     public float maxSpawnTime = 5.0f;
     public Transform Player;
     public float instantiatePosition;
+    public obstcleDesignRules designChecker;
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +33,8 @@ public class BarrelFactory : MonoBehaviour
             if(time >= spawnTime)
             {
                 time = 0.0f;
-                addBarrel();
-                spawnTime = Random.Range(1.0f, 3.0f);
+                if(designChecker.isPlaceOk(Player.position.x + 1000))addBarrel();
+                spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
             }
         }
 

@@ -14,7 +14,7 @@ public class chestFactory : MonoBehaviour
     public float maxSpawnTime = 5.0f;
     public Transform Player;
     public float instantiatePosition;
-
+    public obstcleDesignRules designChecker;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +30,10 @@ public class chestFactory : MonoBehaviour
         {
             time += Time.deltaTime;
             if(time >= spawnTime)
-            {
+            { 
                 time = 0.0f;
-                addchest();
-                spawnTime = Random.Range(1.0f, 3.0f);
+                if(designChecker.isPlaceOk(Player.position.x + 1000))addchest();
+                spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
             }
         }
     }
