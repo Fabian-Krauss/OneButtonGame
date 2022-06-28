@@ -46,7 +46,7 @@ public class PlayerMovment : MonoBehaviour
         // make player fall down faster
         if (my_Rigidbody.velocity.y < 0)
         {
-            my_Rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (1.0f - my_Rigidbody.velocity.y / 10.0f) * Time.deltaTime;
+            my_Rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (1.0f - my_Rigidbody.velocity.y / 5.0f) * Time.deltaTime;
         }
 
     }
