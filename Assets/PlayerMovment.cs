@@ -29,6 +29,7 @@ public class PlayerMovment : MonoBehaviour
     private float bri;
     private float timeAtJump = 0.0f;
     public float timeBetweenJumps = 0.5f;
+    public lifeBar lBar;
     // private float rainbowSpeed = 0.1f;
     // private float rainbowTime = 0.0f;
 
@@ -135,6 +136,10 @@ public class PlayerMovment : MonoBehaviour
         }
         else{
             spriteRenderer.color = Color.white;
+        }
+
+        if(lBar.currentLife <= 0){
+             SceneManager.LoadScene("MainMenu");  
         }
 
         score++;
