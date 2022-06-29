@@ -50,7 +50,6 @@ public class obstcleDesignRules : MonoBehaviour
                             
                        }
                 }
-                if(posIsOk) return true;
          }
          else if(type == IS_BARREL){
 
@@ -59,6 +58,6 @@ public class obstcleDesignRules : MonoBehaviour
 
          }
          if(Mathf.Abs(position - canon.gameObject.transform.position.x) > protectedDistance  && Mathf.Abs(position - beer.gameObject.transform.position.x) > protectedDistance && posIsOk)  return true;
-         return false;
+         return posIsOk;
     }
 }

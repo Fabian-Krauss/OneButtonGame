@@ -16,7 +16,7 @@ public class drinkBeer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        bar.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -31,7 +31,6 @@ public class drinkBeer : MonoBehaviour
                 positionOk = true;
             }
         }else{
-            bar.gameObject.SetActive(false);
             playerMovment.enableJump = true;
             positionOk = false;
         }
@@ -40,14 +39,15 @@ public class drinkBeer : MonoBehaviour
             if ((Input.GetKeyUp(KeyCode.Space) || transform.position.x > player.gameObject.transform.position.x) && !hasBeenDrunken){
                 hasBeenDrunken = true;
                 zerfickerModus = true;
-
                 Debug.Log("Bier ist gsoffen");
             }
         }
         if(zerfickerModus){
             zerfickerTime+=Time.deltaTime;
+            barScript.slider.value = 1- zerfickerTime/zerfickerActiveTime;
             if(zerfickerTime > zerfickerActiveTime){
                 zerfickerModus = false;
+                bar.gameObject.SetActive(false);
             }
         }
     }

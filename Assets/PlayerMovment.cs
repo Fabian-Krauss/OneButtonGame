@@ -22,6 +22,7 @@ public class PlayerMovment : MonoBehaviour
     public AudioSource jumpSound;
     public AudioSource doubleJumpSound;
     public AudioSource dieSound;
+    public AudioSource landeSound;
     public bool enableJump = true;
     public drinkBeer beerScript;
     public SpriteRenderer spriteRenderer;
@@ -35,12 +36,17 @@ public class PlayerMovment : MonoBehaviour
     public ScenenManager sm;
     public levelVar lv;
     public GameObject enemyIdicator;
+    public GameObject enemyIdicator_sb;
+    public GameObject enemyIdicator_s;
     public float distandNotShowAnything = 200;
     private float distanceToBorder = 720;
     // private float rainbowSpeed = 0.1f;
     // private float rainbowTime = 0.0f;
 
-        
+
+    void Awake(){
+      DontDestroyOnLoad(dieSound);
+    } 
     // Start is called before the first frame update
     void Start()
     {
@@ -71,7 +77,10 @@ public class PlayerMovment : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D hit)
     {
-        isGrounded = true;
+        if(!isGrounded){
+            landeSound.Play();
+                 isGrounded = true;
+        }
         enableDoubleJump = false;
         if(hit.transform.gameObject.name == "schatzkarte"){
               SceneManager.LoadScene("SchatzkartenScene");
@@ -81,6 +90,7 @@ public class PlayerMovment : MonoBehaviour
             if (!DEBUG){
                 if(!beerScript.zerfickerModus){
                     dieSound.Play();
+
                     //stop player
                     my_Rigidbody.velocity = new Vector2(0, 0);
                     // throw player in the air
@@ -151,13 +161,16 @@ public class PlayerMovment : MonoBehaviour
         }
 
         if(lBar.currentLife <= 0){
-            
+            dieSound.Play();
+       
             lv.currentLevel = SceneManager.GetActiveScene().buildIndex;
              xPosS.xValue = transform.position.x;
              SceneManager.LoadScene("EndScreen");  
         }
 
         if(transform.position.y < 20){
+            dieSound.Play();
+        
             lv.currentLevel = SceneManager.GetActiveScene().buildIndex;
             xPosS.xValue = transform.position.x;
              SceneManager.LoadScene("EndScreen");
@@ -169,57 +182,113 @@ public class PlayerMovment : MonoBehaviour
         speedFactor = 200f + (score/300);
         //increase jump force proportional to the score
         // jumpForce = 25000.0f + (score/300);
-        GameObject g = findClosestEnemy();
-        if(g != null){
-            if(g.gameObject.transform.position.x - transform.position.x > distandNotShowAnything + distanceToBorder){
-            enemyIdicator.gameObject.SetActive(false);
-            }
-            else{
-                switch (g.tag)
-                {
-                    case "skeleton":
-                        spriteRendererEi.color = new Color(0, 0, 255, 0.7f);
-    
-                    break;
-                    case "barrel":
-                        spriteRendererEi.color = new Color(0, 0, 255, 0.7f);
-                    break;                
-                    case "soldier":
-                        spriteRendererEi.color = new Color(255, 0, 0, 0.7f);
-                    break;
-                    case "chest":
-                        spriteRendererEi.color = new Color(0, 255, 0, 0.7f);
-                    break;                               
-                    default:
-                    break;
-                }
-                enemyIdicator.gameObject.SetActive(true);
-            }
-        }
-        else{
-            enemyIdicator.gameObject.SetActive(false);
-        }
+        // GameObject g = findClosestEnemy();
+           GameObject[] gs = findClosestEnemys();
+            bool containsBlue = false;
+            bool containsRed = false;
+            bool containsGreen = false;
+           foreach (GameObject o in gs){
+               if(o != null){
+                   if(o.tag == "skeleton" || o.tag == "barrel") containsBlue = true;
+                   else if(o.tag == "soldier") containsRed = true;
+                   else if(o.tag == "chest") containsGreen = true;
+               }
+           }
+           if(containsBlue){
+               enemyIdicator_sb.SetActive(true);
+           }
+           else{
+               enemyIdicator_sb.SetActive(false);
+           }
+           if(containsRed){
+               enemyIdicator_s.SetActive(true);
+           }
+           else{
+               enemyIdicator_s.SetActive(false);
+           }
+           if(containsGreen){
+               enemyIdicator.SetActive(true);
+           }
+           else{
+               enemyIdicator.SetActive(false);
+           }
     }
 
-    GameObject findClosestEnemy(){
+     GameObject[] findClosestEnemys(){
         object[] obj = GameObject.FindObjectsOfType(typeof (GameObject));
-        GameObject closestObj = null;
-        float distance = 10000;
+        GameObject[] closestObjs = new GameObject[obj.Length];
+        int idx = 0;
                 foreach (object o in obj)
                     {
                        GameObject g = (GameObject) o;
                        if(g.tag == "skeleton" || g.tag == "barrel" || g.tag == "chest" || g.tag == "soldier"){
                             float distanceG = g.gameObject.transform.position.x - (transform.position.x + distanceToBorder);
                             if(distanceG > 0){
-                                if(distanceG < distance){
-                                    distance = distanceG;
-                                    closestObj = g;
+                                if(distanceG < distandNotShowAnything){
+                                    closestObjs[idx] = g;
+                                    idx++;
                                 }
                             }
                        }
                     
                 }
-        Debug.Log("The clostest object is: " + closestObj.tag);
-        return closestObj;
+        return closestObjs;
     }
+
+
+
+    // GameObject findClosestEnemy(){
+    //     object[] obj = GameObject.FindObjectsOfType(typeof (GameObject));
+    //     GameObject closestObj = null;
+    //     float distance = 10000;
+    //             foreach (object o in obj)
+    //                 {
+    //                    GameObject g = (GameObject) o;
+    //                    if(g.tag == "skeleton" || g.tag == "barrel" || g.tag == "chest" || g.tag == "soldier"){
+    //                         float distanceG = g.gameObject.transform.position.x - (transform.position.x + distanceToBorder);
+    //                         if(distanceG > 0){
+    //                             if(distanceG < distance){
+    //                                 distance = distanceG;
+    //                                 closestObj = g;
+    //                             }
+    //                         }
+    //                    }
+                    
+    //             }
+    //     Debug.Log("The clostest object is: " + closestObj.tag);
+    //     return closestObj;
+    // }
+
+            // if(g != null){
+        //     if(g.gameObject.transform.position.x - transform.position.x > distandNotShowAnything + distanceToBorder){
+        //     enemyIdicator.gameObject.SetActive(false);
+        //     }
+        //     else{
+        //         switch (g.tag)
+        //         {
+        //             case "skeleton":
+        //                 spriteRendererEi.color = new Color(0, 0, 255, 0.7f);
+    
+        //             break;
+        //             case "barrel":
+        //                 spriteRendererEi.color = new Color(0, 0, 255, 0.7f);
+        //             break;                
+        //             case "soldier":
+        //                 spriteRendererEi.color = new Color(255, 0, 0, 0.7f);
+        //             break;
+        //             case "chest":
+        //                 spriteRendererEi.color = new Color(0, 255, 0, 0.7f);
+        //             break;                               
+        //             default:
+        //             break;
+        //         }
+        //         enemyIdicator.gameObject.SetActive(true);
+        //     }
+        // }
+        // else{
+        //     enemyIdicator.gameObject.SetActive(false);
+        // }
+
+
+    
 }

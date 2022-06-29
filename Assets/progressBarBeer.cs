@@ -8,6 +8,7 @@ public class progressBarBeer : MonoBehaviour
     public Slider slider;
     public float targetHoldTime = 0.6f;
     public float holdTime = 0.0f;
+    public drinkBeer db;
     // Start is called before the first frame update
 
     private void Awake()
@@ -24,7 +25,7 @@ public class progressBarBeer : MonoBehaviour
     void Update()
     {
         // increase the progress bar during space press
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && !db.zerfickerModus)
         {
             holdTime += Time.deltaTime;
             if (holdTime >= targetHoldTime)

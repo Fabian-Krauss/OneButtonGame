@@ -33,7 +33,7 @@ public class BarrelFactory : MonoBehaviour
             if(time >= spawnTime)
             {
                 time = 0.0f;
-                if(designChecker.isPlaceOk(Player.position.x + 2000, 2))addBarrel();
+                if(designChecker.isPlaceOk(Player.position.x + 1000, 2))addBarrel();
                 spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
             }
         }
@@ -47,7 +47,7 @@ public class BarrelFactory : MonoBehaviour
         if(barrelCount < maxBarrelCount)
         {
             Debug.Log("Barrel Count: " + barrelCount);
-            instantiatePosition =  Player.position.x + 2000;
+            instantiatePosition =  Player.position.x + 1000;
             Vector2 spawnPosition = new Vector2(instantiatePosition, 35);
             GameObject barrelObj = Instantiate(barrel.gameObject, spawnPosition, Quaternion.identity);
             allBarrels[barrelCount] = barrelObj;
