@@ -9,9 +9,8 @@ public class obstcleDesignRules : MonoBehaviour
     public GameObject beer;
     public float protectedDistance = 500.0f;
 
-    public float protectedDistanceChestSkel = 50.0f;
+    public float protectedDistanceChestSkel = 250.0f;
 
-    public chestFactory chestFact;
     public SkeletonFactory skeltFact;
 
     private int IS_CHEST = 0;
@@ -32,17 +31,26 @@ public class obstcleDesignRules : MonoBehaviour
     }
 
     public bool isPlaceOk(float position, int type){
-         if(Mathf.Abs(position - canon.gameObject.transform.position.x) > protectedDistance  && Mathf.Abs(position - beer.gameObject.transform.position.x) > protectedDistance)  return true;
-    
+
+         bool posIsOk = true;
          if(type == IS_CHEST){
             
          }
          else if(type == IS_SKEL){
-            //  bool posIsOk = true;
-            //   for(int i = 0; i < chestFact.chestCount; i++){
-            //       if(Mathf.Abs(position - chestFact.allChests[i].gameObject.transform.position.x) < protectedDistanceChestSkel) posIsOk = false;
-            //   }
-            //   if(posIsOk) return true;
+               object[] obj = GameObject.FindObjectsOfType(typeof (GameObject));
+                foreach (object o in obj)
+                    {
+                       GameObject g = (GameObject) o;
+                       if(g.tag == "chest"){
+        
+                            if(Mathf.Abs(position - g.transform.position.x) < protectedDistanceChestSkel){
+                                posIsOk = false; 
+    
+                            } 
+                            
+                       }
+                }
+                if(posIsOk) return true;
          }
          else if(type == IS_BARREL){
 
@@ -50,6 +58,7 @@ public class obstcleDesignRules : MonoBehaviour
          else if(type == IS_SOLDIER){
 
          }
+         if(Mathf.Abs(position - canon.gameObject.transform.position.x) > protectedDistance  && Mathf.Abs(position - beer.gameObject.transform.position.x) > protectedDistance && posIsOk)  return true;
          return false;
     }
 }

@@ -12,7 +12,9 @@ public class endScreenScript : MonoBehaviour
      public xPosScript xPosS;
      public Text TextFieldXpos;
 
-     public float levelLength = 24641.0f;
+     public float levelLength = 22000.0f;
+
+     public levelVar levelS;
 
     // Start is called before the first frame update
     void Start()

@@ -31,6 +31,8 @@ public class PlayerMovment : MonoBehaviour
     private float timeAtJump = 0.0f;
     public float timeBetweenJumps = 0.5f;
     public lifeBar lBar;
+    public ScenenManager sm;
+    public levelVar lv;
     // private float rainbowSpeed = 0.1f;
     // private float rainbowTime = 0.0f;
 
@@ -84,6 +86,8 @@ public class PlayerMovment : MonoBehaviour
 
                     my_Rigidbody.velocity = new Vector2(-20, 0);
 
+                    Debug.Log("bhvbewrivbiuvbwiubvr: "+ SceneManager.GetActiveScene().buildIndex);
+                    lv.currentLevel = SceneManager.GetActiveScene().buildIndex;
                     xPosS.xValue = transform.position.x;
                     SceneManager.LoadScene("EndScreen");
                     // StartCoroutine(playerDie());
@@ -143,8 +147,16 @@ public class PlayerMovment : MonoBehaviour
         }
 
         if(lBar.currentLife <= 0){
+            
+            lv.currentLevel = SceneManager.GetActiveScene().buildIndex;
              xPosS.xValue = transform.position.x;
              SceneManager.LoadScene("EndScreen");  
+        }
+
+        if(transform.position.y < 20){
+            lv.currentLevel = SceneManager.GetActiveScene().buildIndex;
+            xPosS.xValue = transform.position.x;
+             SceneManager.LoadScene("EndScreen");
         }
 
         TextFieldScore.text = "Score: " + ((int)(score/10)).ToString();

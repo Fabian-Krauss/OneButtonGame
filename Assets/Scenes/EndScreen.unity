@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneCounter: 0
+  levelS: {fileID: 11400000, guid: 326e9439929084a059dee620c2e73f1d, type: 2}
 --- !u!4 &206925777
 Transform:
   m_ObjectHideFlags: 0
@@ -690,7 +691,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1266186178}
         m_TargetAssemblyTypeName: ScenenManager, Assembly-CSharp
-        m_MethodName: changeScene
+        m_MethodName: loadSceneAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -839,6 +840,7 @@ MonoBehaviour:
   xPosS: {fileID: 11400000, guid: 56e2948bd924945ea8b51c7cffe044de, type: 2}
   TextFieldXpos: {fileID: 1277299291}
   levelLength: 24641
+  levelS: {fileID: 11400000, guid: 326e9439929084a059dee620c2e73f1d, type: 2}
 --- !u!4 &1084625541
 Transform:
   m_ObjectHideFlags: 0
@@ -971,6 +973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneCounter: 0
+  levelS: {fileID: 11400000, guid: 326e9439929084a059dee620c2e73f1d, type: 2}
 --- !u!1 &1277299289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,3 +1280,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneCounter: 0
+  levelS: {fileID: 11400000, guid: 326e9439929084a059dee620c2e73f1d, type: 2}

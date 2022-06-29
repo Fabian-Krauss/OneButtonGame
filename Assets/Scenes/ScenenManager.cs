@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class ScenenManager : MonoBehaviour
 {
-
     public int sceneCounter = 0;
+    public levelVar levelS;
     // Start is called before the first frame update
     void Start()
     {
-   
+        sceneCounter = (int) levelS.currentLevel;
     }
 
     // Update is called once per frame
@@ -31,29 +31,23 @@ public class ScenenManager : MonoBehaviour
         SceneManager.LoadScene("PiratesMainScene");
     }
 
-    public void loadNextScene(){
-      sceneCounter++;
-      switch (sceneCounter)
-      {
-          case 1:
-             SceneManager.LoadScene("Level2");
-          break;
-          case 2:
-              SceneManager.LoadScene("Level3");
-          break;
-          case 3:
-              SceneManager.LoadScene("Level4");
-          break;
-          case 4:
-              SceneManager.LoadScene("Level5");
-          break;
-           case 5:
-              SceneManager.LoadScene("Level5");
-          break;
+    public void loadScene(int idx){
+        sceneCounter = idx;
+         SceneManager.LoadScene(idx);
+    }
 
-          default:
-          break;
-      }
+    public void loadNextScene(){
+    //   levelS.currentLevel = sceneCounter;
+
+      sceneCounter++;
+      SceneManager.LoadScene(sceneCounter);
+    }
+
+    public void loadSceneAgain(){
+    //   levelS.currentLevel = sceneCounter;
+      Debug.Log("current scene: "+ sceneCounter);
+      SceneManager.LoadScene(sceneCounter);
+      sceneCounter++;
     }
 
     public void quit()
