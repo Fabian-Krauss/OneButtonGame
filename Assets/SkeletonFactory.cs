@@ -32,7 +32,7 @@ public class SkeletonFactory : MonoBehaviour
             if(time >= spawnTime)
             {
                 time = 0.0f;
-                if(designChecker.isPlaceOk(Player.position.x + 1000, 1))addSkeleton();
+                if(designChecker.isPlaceOk(Player.position.x + 2000, 1))addSkeleton();
                 spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
             }
         }
@@ -44,7 +44,7 @@ public class SkeletonFactory : MonoBehaviour
         if(skeletonCount < maxSkeletonCount)
         {
             // Debug.Log("Skeleton Count: " + skeletonCount);
-            instantiatePosition =  Player.position.x + 1000;
+            instantiatePosition =  Player.position.x + 2000;
             Vector2 spawnPosition = new Vector2(instantiatePosition, 35);
             GameObject skeletonObj = Instantiate(skeleton.gameObject, spawnPosition, Quaternion.identity);
             allSkeletons[skeletonCount] = skeletonObj;

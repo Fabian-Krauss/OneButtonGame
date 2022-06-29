@@ -25,6 +25,7 @@ public class PlayerMovment : MonoBehaviour
     public bool enableJump = true;
     public drinkBeer beerScript;
     public SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRendererEi;
     private float hue;
     private float sat;
     private float bri;
@@ -33,6 +34,9 @@ public class PlayerMovment : MonoBehaviour
     public lifeBar lBar;
     public ScenenManager sm;
     public levelVar lv;
+    public GameObject enemyIdicator;
+    public float distandNotShowAnything = 200;
+    private float distanceToBorder = 720;
     // private float rainbowSpeed = 0.1f;
     // private float rainbowTime = 0.0f;
 
@@ -165,5 +169,57 @@ public class PlayerMovment : MonoBehaviour
         speedFactor = 200f + (score/300);
         //increase jump force proportional to the score
         // jumpForce = 25000.0f + (score/300);
+        GameObject g = findClosestEnemy();
+        if(g != null){
+            if(g.gameObject.transform.position.x - transform.position.x > distandNotShowAnything + distanceToBorder){
+            enemyIdicator.gameObject.SetActive(false);
+            }
+            else{
+                switch (g.tag)
+                {
+                    case "skeleton":
+                        spriteRendererEi.color = new Color(0, 0, 255, 0.7f);
+    
+                    break;
+                    case "barrel":
+                        spriteRendererEi.color = new Color(0, 0, 255, 0.7f);
+                    break;                
+                    case "soldier":
+                        spriteRendererEi.color = new Color(255, 0, 0, 0.7f);
+                    break;
+                    case "chest":
+                        spriteRendererEi.color = new Color(0, 255, 0, 0.7f);
+                    break;                               
+                    default:
+                    break;
+                }
+                enemyIdicator.gameObject.SetActive(true);
+            }
+        }
+        else{
+            enemyIdicator.gameObject.SetActive(false);
+        }
+    }
+
+    GameObject findClosestEnemy(){
+        object[] obj = GameObject.FindObjectsOfType(typeof (GameObject));
+        GameObject closestObj = null;
+        float distance = 10000;
+                foreach (object o in obj)
+                    {
+                       GameObject g = (GameObject) o;
+                       if(g.tag == "skeleton" || g.tag == "barrel" || g.tag == "chest" || g.tag == "soldier"){
+                            float distanceG = g.gameObject.transform.position.x - (transform.position.x + distanceToBorder);
+                            if(distanceG > 0){
+                                if(distanceG < distance){
+                                    distance = distanceG;
+                                    closestObj = g;
+                                }
+                            }
+                       }
+                    
+                }
+        Debug.Log("The clostest object is: " + closestObj.tag);
+        return closestObj;
     }
 }
