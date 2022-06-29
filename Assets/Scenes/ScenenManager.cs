@@ -55,4 +55,27 @@ public class ScenenManager : MonoBehaviour
         Debug.Log("On Quit");
         Application.Quit();
     }
+
+    public void load1(){
+        SceneManager.LoadScene(0);
+    }
+
+        public void load2(){
+        SceneManager.LoadScene(1);
+    }
+
+        public void load3(){
+        SceneManager.LoadScene(2);
+    }
+
+        public void load4(){
+        SceneManager.LoadScene(3);
+    }
+
+        public void load5(){
+        SceneManager.LoadScene(4);
+    }
+           public void loadMenu(){
+        SceneManager.LoadScene("MainMenu");
+    }
 }
