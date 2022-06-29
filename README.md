@@ -75,3 +75,34 @@ Mit diesem Item ist Aufgabe 3 abgeschlossen! :)
   - über die Schatzkarte gelangt man in den Endscreen eines jeden Levels, in dem die Geschichte fortgesetzt und der Score angezeigt wird
   
 An festen Zielen fehlt uns somit nur noch die farbliche Vorwarnung des Spielers über Hindernisse am rechten Bildschirmrand und die Implementierung bzw. Verbesserung der Sounds im Spiel. Abschließend werden dann die restlichen vier Spiellevel erstellt.
+
+
+### Aufgabe 4 & 5
+**29.06.22**
+- Hinzufügen von drei farblichen Indikatoren für Gegner/Hindernisse am rechten Bildschirmrand. Sobald ein Hindernis die Entfernung von 200 Einheiten zum rechten Bildschirmrand unterschreitet, wird dies farblich im UI angezeigt 
+  - grüner Streifen: statische Hindernisse (Kisten)
+  - blauer Streifen: bewegliche Hindernisse (Skelette, Fässer)
+  - roter Streifen: schießende Gegner (Marinesoldaten)
+  - die Streifen sind nebeneinander angeordnet, sodass auch mehrere Hindernisse parallel angezeigt werden können
+
+Hiermit ist Aufgabe 4 abgeschlossen! :)
+
+- das zufällige Spawnen von Kisten wurde deaktiviert und durch eine manuelle Platzierung ersetzt, da die zufällige Erzeugung teilweise unspielbare Konstellationen erstellt hat
+  - Münzen, Fässer, Skelette und Marinesoldaten werden weiterhin zufällig generiert
+- die Sounds, die wir am Anfang beispielhaft hinzugefügt hatten, wurden nun teilweise erweitert und teilweise ausgetauscht. Die folgenden Sounds sind bereits implementiert:
+  - Sprung
+  - Landung
+  - Münzen aufsammeln
+  - Tod des Spielers
+  - Hintergrundmusik
+- als weitere Spielmechanik wurde eine abnehmende Lebensanzeige hinzugefügt, die durch das Aufsammeln von Zitronen wieder aufgefüllt werden muss
+  - sammelt der Pirat zu wenige Zitronen ein, erkrankt er an Skorbut und stirbt
+  - die Zitronen werden ebenfalls manuell im Spiel platziert
+- Verbesserung des Menüs und des Endscreens
+  - zusätzlich zum Score wird nun auch der erreichte Fortschritt im Level angezeigt
+- Erstellung eines zweiten Levels, das in "Blackbeard´s Hölle" spielt
+  - in der Hölle kann der Spieler durch Lücken im Boden fallen und stirbt
+- Allgemeines zu den Leveln:
+  - alle Level sollen gleich lang und die Schwierigkeit der ersten vier Level sollte ebenfalls ungefähr gleich sein
+    - das fünfte und finale Level wird etwas anspruchsvoller 
+  - in jedem Level kommen mindestens eine Kanone und ein Bierkrug als Interactables vor
