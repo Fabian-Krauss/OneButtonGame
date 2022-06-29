@@ -83,7 +83,27 @@ public class PlayerMovment : MonoBehaviour
         }
         enableDoubleJump = false;
         if(hit.transform.gameObject.name == "schatzkarte"){
-              SceneManager.LoadScene("SchatzkartenScene");
+              switch (SceneManager.GetActiveScene().buildIndex)
+              {
+                  case 0:
+                                SceneManager.LoadScene("SchatzkartenScene");
+                  break;
+                  case 1:
+                                SceneManager.LoadScene("SchatzkartenScene2");
+                  break;
+                  case 2:
+                                SceneManager.LoadScene("SchatzkartenScene3");
+                  break;
+                  case 3:
+                                SceneManager.LoadScene("SchatzkartenScene4");
+                  break;
+                  case 4:
+                                SceneManager.LoadScene("SchatzkartenScene5");
+                  break;
+                  
+                  default:
+                  break;
+              }
         }
         else if(hit.transform.gameObject.name != "ground")
         {
@@ -100,7 +120,6 @@ public class PlayerMovment : MonoBehaviour
 
                     my_Rigidbody.velocity = new Vector2(-20, 0);
 
-                    Debug.Log("bhvbewrivbiuvbwiubvr: "+ SceneManager.GetActiveScene().buildIndex);
                     lv.currentLevel = SceneManager.GetActiveScene().buildIndex;
                     xPosS.xValue = transform.position.x;
                     SceneManager.LoadScene("EndScreen");
@@ -235,59 +254,6 @@ public class PlayerMovment : MonoBehaviour
         return closestObjs;
     }
 
-
-
-    // GameObject findClosestEnemy(){
-    //     object[] obj = GameObject.FindObjectsOfType(typeof (GameObject));
-    //     GameObject closestObj = null;
-    //     float distance = 10000;
-    //             foreach (object o in obj)
-    //                 {
-    //                    GameObject g = (GameObject) o;
-    //                    if(g.tag == "skeleton" || g.tag == "barrel" || g.tag == "chest" || g.tag == "soldier"){
-    //                         float distanceG = g.gameObject.transform.position.x - (transform.position.x + distanceToBorder);
-    //                         if(distanceG > 0){
-    //                             if(distanceG < distance){
-    //                                 distance = distanceG;
-    //                                 closestObj = g;
-    //                             }
-    //                         }
-    //                    }
-                    
-    //             }
-    //     Debug.Log("The clostest object is: " + closestObj.tag);
-    //     return closestObj;
-    // }
-
-            // if(g != null){
-        //     if(g.gameObject.transform.position.x - transform.position.x > distandNotShowAnything + distanceToBorder){
-        //     enemyIdicator.gameObject.SetActive(false);
-        //     }
-        //     else{
-        //         switch (g.tag)
-        //         {
-        //             case "skeleton":
-        //                 spriteRendererEi.color = new Color(0, 0, 255, 0.7f);
-    
-        //             break;
-        //             case "barrel":
-        //                 spriteRendererEi.color = new Color(0, 0, 255, 0.7f);
-        //             break;                
-        //             case "soldier":
-        //                 spriteRendererEi.color = new Color(255, 0, 0, 0.7f);
-        //             break;
-        //             case "chest":
-        //                 spriteRendererEi.color = new Color(0, 255, 0, 0.7f);
-        //             break;                               
-        //             default:
-        //             break;
-        //         }
-        //         enemyIdicator.gameObject.SetActive(true);
-        //     }
-        // }
-        // else{
-        //     enemyIdicator.gameObject.SetActive(false);
-        // }
 
 
     

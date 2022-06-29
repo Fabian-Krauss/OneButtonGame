@@ -25,12 +25,6 @@ public class ScenenManager : MonoBehaviour
         
     }
 
-    public void changeScene()
-    {
-        Debug.Log("On Change");
-        SceneManager.LoadScene("PiratesMainScene");
-    }
-
     public void loadScene(int idx){
         sceneCounter = idx;
          SceneManager.LoadScene(idx);

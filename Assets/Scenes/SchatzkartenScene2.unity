@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneCounter: 0
-  levelS: {fileID: 0}
+  levelS: {fileID: 11400000, guid: 326e9439929084a059dee620c2e73f1d, type: 2}
 --- !u!114 &342734039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -938,9 +938,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Congratulations!\n\nYou finished the first part of your adventure.\n\nI
-    have secret information that your parrot has been kidnapped by the marine soldiers
-    on their ship. To get there, you need to pass Blackbeard\xB4s hell..."
+  m_Text: 'Well done!
+
+
+    You finished the second part of your adventure.
+
+
+    You
+    mastered this hell of a ride and can continue your path on the stairway to heaven!'
 --- !u!222 &2024789850
 CanvasRenderer:
   m_ObjectHideFlags: 0
