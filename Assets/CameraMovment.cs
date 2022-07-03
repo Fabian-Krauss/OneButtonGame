@@ -14,7 +14,10 @@ public class CameraMovment : MonoBehaviour
     void Update()
     {
         // follow the player with the camera
-        transform.position = new Vector3(GameObject.Find("Player").transform.position.x + 300, 200, -80);
+            transform.position = new Vector3(GameObject.Find("Player").transform.position.x + 300, 200, -80);
+  
+  
+
         
     }
 }

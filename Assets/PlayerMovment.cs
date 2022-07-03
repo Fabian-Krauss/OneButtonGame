@@ -79,7 +79,7 @@ public class PlayerMovment : MonoBehaviour
     {
         if(!isGrounded){
             landeSound.Play();
-                 isGrounded = true;
+            isGrounded = true;
         }
         enableDoubleJump = false;
         if(hit.transform.gameObject.name == "schatzkarte"){
@@ -187,7 +187,7 @@ public class PlayerMovment : MonoBehaviour
              SceneManager.LoadScene("EndScreen");  
         }
 
-        if(transform.position.y < 20){
+        if(transform.position.y < 15){
             dieSound.Play();
         
             lv.currentLevel = SceneManager.GetActiveScene().buildIndex;
