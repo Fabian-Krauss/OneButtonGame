@@ -31,6 +31,7 @@ public class drinkBeer : MonoBehaviour
                 positionOk = true;
             }
         }else{
+            if(!zerfickerModus) bar.gameObject.SetActive(false);
             playerMovment.enableJump = true;
             positionOk = false;
         }

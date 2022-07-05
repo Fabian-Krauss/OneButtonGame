@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BarrelFactory : MonoBehaviour
 {
@@ -48,7 +49,15 @@ public class BarrelFactory : MonoBehaviour
         {
             Debug.Log("Barrel Count: " + barrelCount);
             instantiatePosition =  Player.position.x + 1000;
-            Vector2 spawnPosition = new Vector2(instantiatePosition, 35);
+             float spawnHight = 0;
+            if(SceneManager.GetActiveScene().buildIndex == 4){
+                   spawnHight = 180;
+            }
+            else{
+                   spawnHight = 35;
+            }
+
+            Vector2 spawnPosition = new Vector2(instantiatePosition, spawnHight);
             GameObject barrelObj = Instantiate(barrel.gameObject, spawnPosition, Quaternion.identity);
             allBarrels[barrelCount] = barrelObj;
             barrelCount++;

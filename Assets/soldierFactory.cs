@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class soldierFactory : MonoBehaviour
 {
@@ -44,7 +45,15 @@ public class soldierFactory : MonoBehaviour
         {
             Debug.Log("soldier Count: " + soldierCount);
             instantiatePosition =  Player.position.x + 1000;
-            Vector2 spawnPosition = new Vector2(instantiatePosition, 50);
+             float spawnHight = 0;
+            if(SceneManager.GetActiveScene().buildIndex == 4){
+                   spawnHight = 180;
+            }
+            else{
+                   spawnHight = 50;
+            }
+
+            Vector2 spawnPosition = new Vector2(instantiatePosition, spawnHight);
             GameObject soldierObj = Instantiate(soldier.gameObject, spawnPosition, Quaternion.identity);
             allsoldiers[soldierCount] = soldierObj;
             soldierCount++;

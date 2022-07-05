@@ -5224,7 +5224,7 @@ MonoBehaviour:
   score: 0
   scoreS: {fileID: 11400000, guid: 662bb5f217fb04e10a7c461f53b15b8b, type: 2}
   xPosS: {fileID: 11400000, guid: 56e2948bd924945ea8b51c7cffe044de, type: 2}
-  DEBUG: 1
+  DEBUG: 0
   enableDoubleJump: 0
   jumpSound: {fileID: 792434881}
   doubleJumpSound: {fileID: 2081238443}
@@ -17748,6 +17748,7 @@ MonoBehaviour:
   time: 0
   Player: {fileID: 494944698}
   instantiatePosition: 0
+  sm: {fileID: 0}
 --- !u!61 &1839692110
 BoxCollider2D:
   m_ObjectHideFlags: 0

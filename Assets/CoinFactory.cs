@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CoinFactory : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class CoinFactory : MonoBehaviour
     public float time = 0.0f;
     public Transform Player;
     public float instantiatePosition;
+    public ScenenManager sm;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +44,15 @@ public class CoinFactory : MonoBehaviour
         {
             // Debug.Log("Coin Count: " + coinCount);
             instantiatePosition =  Player.position.x + 1000;
-            Vector2 spawnPosition = new Vector2(instantiatePosition, 35);
+            float spawnHight = 0;
+            if(SceneManager.GetActiveScene().buildIndex == 4){
+                   spawnHight = 180;
+            }
+            else{
+                   spawnHight = 35;
+            }
+
+            Vector2 spawnPosition = new Vector2(instantiatePosition, spawnHight);
             GameObject coinObj = Instantiate(coin.gameObject, spawnPosition, Quaternion.identity);
             allCoins[coinCount] = coinObj;
             coinCount++;
