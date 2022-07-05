@@ -73,6 +73,7 @@ Mit diesem Item ist Aufgabe 3 abgeschlossen! :)
 - Ausarbeitung einer Geschichte für das Spiel und Implementierung des Spielendes im ersten Level
   - der Spieler muss in eine Schatzkarte springen, die Hinweise darauf gibt, wo sich der verlorene Papagei des Piraten befindet. Über die 5 Level des Spiels erhält der Pirat nun weitere Hinweise über den Aufenthaltsort und findet schließlich seinen Papagei auf dem Schiff der Marinesoldaten
   - über die Schatzkarte gelangt man in den Endscreen eines jeden Levels, in dem die Geschichte fortgesetzt und der Score angezeigt wird
+  **Bild Schatzkarte**
   
 An festen Zielen fehlt uns somit nur noch die farbliche Vorwarnung des Spielers über Hindernisse am rechten Bildschirmrand und die Implementierung bzw. Verbesserung der Sounds im Spiel. Abschließend werden dann die restlichen vier Spiellevel erstellt.
 
@@ -96,13 +97,33 @@ Hiermit ist Aufgabe 4 abgeschlossen! :)
   - Tod des Spielers
   - Hintergrundmusik
 - als weitere Spielmechanik wurde eine abnehmende Lebensanzeige hinzugefügt, die durch das Aufsammeln von Zitronen wieder aufgefüllt werden muss
+**Bild Lebensanzeige**
   - sammelt der Pirat zu wenige Zitronen ein, erkrankt er an Skorbut und stirbt
   - die Zitronen werden ebenfalls manuell im Spiel platziert
 - Verbesserung des Menüs und des Endscreens
   - zusätzlich zum Score wird nun auch der erreichte Fortschritt im Level angezeigt
+  **Bild Endscreen**
 - Erstellung eines zweiten Levels, das in "Blackbeard´s Hölle" spielt
   - in der Hölle kann der Spieler durch Lücken im Boden fallen und stirbt
 - Allgemeines zu den Leveln:
   - alle Level sollen gleich lang und die Schwierigkeit der ersten vier Level sollte ebenfalls ungefähr gleich sein
     - das fünfte und finale Level wird etwas anspruchsvoller 
   - in jedem Level kommen mindestens eine Kanone und ein Bierkrug als Interactables vor
+  
+### Aufgabe 5
+**05.07.22**
+- Level Design für das dritte, vierte und fünfte Level
+  - drittes Level spielt im Himmel und enthält Wolkentexturen und Engel anstatt von Skeletten. Die Kisten wurden durch goldene Harfen ersetzt.
+  - viertes Level spielt am Hafen von Boston, am Ende erhät der Pirat den finalen Hinweis für den Aufenthaltsort seines Papageis
+  - das finale fünfte Level spielt auf dem Schiff der Marinesoldaten
+    - die Soldaten schießen nun häufiger, dafür existieren keine Skelette mehr. Es gibt also Fässer, Kisten und Soldaten als Hindernisse bzw. Gegner
+    - der Pirat läuft zu Beginn auf das Schiff und der Rest des Levels ist leicht erhöht (im Vergleich zu den vorigen Leveln)
+  
+Damit ist die letzte Aufgabe ebenfalls abgeschlossen und das Spiel ist fertig! :)
+
+Hier kommen nun ein paar Screenshots aus den fertigen Leveln:
+**Bild Level 1**
+**Bild Level 2**
+**Level 3**
+**Level 4**
+**Level 5**
