@@ -144,6 +144,11 @@ public class PlayerMovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
         my_Rigidbody.velocity = new Vector2(speedFactor,my_Rigidbody.velocity.y);
         if (enableJump){
             if (Input.GetKeyDown("space") && isGrounded)

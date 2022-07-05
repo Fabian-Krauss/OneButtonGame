@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3c6ac62513bb05e49b91d3658d6953f5
+  - enabled: 1
     path: Assets/Scenes/LvL1.unity
     guid: bf35f557721c44b368b53f2bb9613f3a
   - enabled: 1
@@ -20,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LvL5.unity
     guid: 3d468c269a5924923acc119cf8e54fd7
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 3c6ac62513bb05e49b91d3658d6953f5
   - enabled: 1
     path: Assets/Scenes/SchatzkartenScene.unity
     guid: 9c69f33a0bdea4a0f93c280e27cce093
