@@ -3202,6 +3202,7 @@ MonoBehaviour:
   enemyIdicator_sb: {fileID: 752074616}
   enemyIdicator_s: {fileID: 1333848444}
   distandNotShowAnything: 200
+  isNearCanon: 0
 --- !u!1 &497566393
 GameObject:
   m_ObjectHideFlags: 0
@@ -8304,8 +8305,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -64, y: 80}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchoredPosition: {x: 0.002533, y: 65.785}
+  m_SizeDelta: {x: 346.61, y: 171.216}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1475986757
 MonoBehaviour:

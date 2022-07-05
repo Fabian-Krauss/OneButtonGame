@@ -5,10 +5,12 @@ Dies ist das "Developer Diary" von Lars Gudjons, Tim Maier und Fabian Jörg Krau
 
 ### Aufgabe 1
 **31.05.22**
+
 - Download von Unity und Erstellen eines 3D Projektes
 
 
 **14.06.22**
+
 - Erstellen einer Kamera und eines Zylinders, der den Player symbolisiert
 - Kamera ist an die Player-Position geheftet und folgt ihm
 - Player bewegt sich mit konstanter Geschwindigkeit nach rechts
@@ -22,6 +24,10 @@ Dies ist das "Developer Diary" von Lars Gudjons, Tim Maier und Fabian Jörg Krau
 - Hinzufügen eines Scores, der pro Frame inkrementiert wird
   - der Score wird im Spiel in einem Textfeld angezeigt, das der Bewegung des Players folgt
 
+<p align="center">
+  <img src="Resources/day1.png" width="600" title="Error heatmap before calibration" /> 
+</p>
+
 Mit diesen Ergebnissen wurde Aufgabe 1 erfolgreich abgeschlossen! :)
 
 ### Aufgabe 2
@@ -29,7 +35,13 @@ Mit diesen Ergebnissen wurde Aufgabe 1 erfolgreich abgeschlossen! :)
 Nach mehreren Problemen mit der Ausrichtung von Objekten in Relation zur Kamera haben wir uns entschlossen, ein neues Projekt in 2D zu erstellen und die bisherigen Ergebnisse auf das neue Projekt zu übertragen.
 Ein weiterer Vorteil hierbei ist, dass wir nun das bereitgestellte Asset-Set nutzen können.
 
+
+<p align="center">
+  <img src="Resources/day2.png" width="600" title="Error heatmap before calibration" /> 
+</p>
+
 **21.06.22**
+
 - Erzeugung von Collectables in Form von Coins, die beim Einsammeln den Score erhöhen
 - Implementierung einer "CoinFactory", die in zufälligen Zeitabständen neue Coins erstellt, die kurz hinter dem Bildrand spawnen
 - Erzeugung von Skeletten als bewegliche Hindernisse/Gegner
@@ -40,6 +52,7 @@ Ein weiterer Vorteil hierbei ist, dass wir nun das bereitgestellte Asset-Set nut
 
 ### Aufgabe 2 & 3
 **22.06.2022**
+
 - Münzen drehen sich jetzt um die z-Achse
 - die Kamera bewegt sich nun nur noch in x-Richtung mit dem Spieler mit, sodass sie in y-Richtung statisch bleibt (Kamera springt nicht mit, wenn der Spieler springt)
 - neue Assets für Fässer und Boxen/Kisten als zusätzliche Hindernisse mit eigens ausgeschnittenem Sprite
@@ -59,6 +72,7 @@ Somit ist Aufgabe 2 abgeschlossen und für das Abschließen von Aufgabe 3 fehlt 
 
 ### Aufgabe 3 & 4
 **28.06.22**
+
 - als zweites Interactable wurde ein Glas Bier hinzugefügt, das durch Halten der Leertaste eingesammelt werden kann und den Spieler für 5 Sekunden unsterblich macht
   - in diesem Modus werden alle Objekte, mit denen der Spieler normalerweise kollidiert wäre, zerstört
 
@@ -73,13 +87,18 @@ Mit diesem Item ist Aufgabe 3 abgeschlossen! :)
 - Ausarbeitung einer Geschichte für das Spiel und Implementierung des Spielendes im ersten Level
   - der Spieler muss in eine Schatzkarte springen, die Hinweise darauf gibt, wo sich der verlorene Papagei des Piraten befindet. Über die 5 Level des Spiels erhält der Pirat nun weitere Hinweise über den Aufenthaltsort und findet schließlich seinen Papagei auf dem Schiff der Marinesoldaten
   - über die Schatzkarte gelangt man in den Endscreen eines jeden Levels, in dem die Geschichte fortgesetzt und der Score angezeigt wird
-  **Bild Schatzkarte**
+
+<p align="center">
+  <img src="Resources/day3.png" width="400" title="Error heatmap before calibration" /> 
+  <img src="Resources/schatzkarte.png" width="200" title="Error heatmap before calibration" />
+</p>
   
 An festen Zielen fehlt uns somit nur noch die farbliche Vorwarnung des Spielers über Hindernisse am rechten Bildschirmrand und die Implementierung bzw. Verbesserung der Sounds im Spiel. Abschließend werden dann die restlichen vier Spiellevel erstellt.
 
 
 ### Aufgabe 4 & 5
 **29.06.22**
+
 - Hinzufügen von drei farblichen Indikatoren für Gegner/Hindernisse am rechten Bildschirmrand. Sobald ein Hindernis die Entfernung von 200 Einheiten zum rechten Bildschirmrand unterschreitet, wird dies farblich im UI angezeigt 
   - grüner Streifen: statische Hindernisse (Kisten)
   - blauer Streifen: bewegliche Hindernisse (Skelette, Fässer)
@@ -97,12 +116,17 @@ Hiermit ist Aufgabe 4 abgeschlossen! :)
   - Tod des Spielers
   - Hintergrundmusik
 - als weitere Spielmechanik wurde eine abnehmende Lebensanzeige hinzugefügt, die durch das Aufsammeln von Zitronen wieder aufgefüllt werden muss
-**Bild Lebensanzeige**
+
+<p align="center">
+  <img src="Resources/health_bar.png" width="400" title="Error heatmap before calibration" /> 
+</p>
+
   - sammelt der Pirat zu wenige Zitronen ein, erkrankt er an Skorbut und stirbt
   - die Zitronen werden ebenfalls manuell im Spiel platziert
 - Verbesserung des Menüs und des Endscreens
   - zusätzlich zum Score wird nun auch der erreichte Fortschritt im Level angezeigt
   **Bild Endscreen**
+
 - Erstellung eines zweiten Levels, das in "Blackbeard´s Hölle" spielt
   - in der Hölle kann der Spieler durch Lücken im Boden fallen und stirbt
 - Allgemeines zu den Leveln:
@@ -112,6 +136,7 @@ Hiermit ist Aufgabe 4 abgeschlossen! :)
   
 ### Aufgabe 5
 **05.07.22**
+
 - Level Design für das dritte, vierte und fünfte Level
   - drittes Level spielt im Himmel und enthält Wolkentexturen und Engel anstatt von Skeletten. Die Kisten wurden durch goldene Harfen ersetzt.
   - viertes Level spielt am Hafen von Boston, am Ende erhät der Pirat den finalen Hinweis für den Aufenthaltsort seines Papageis
@@ -122,8 +147,11 @@ Hiermit ist Aufgabe 4 abgeschlossen! :)
 Damit ist die letzte Aufgabe ebenfalls abgeschlossen und das Spiel ist fertig! :)
 
 Hier kommen nun ein paar Screenshots aus den fertigen Leveln:
-**Bild Level 1**
-**Bild Level 2**
-**Level 3**
-**Level 4**
-**Level 5**
+<p align="center">
+  <img src="Resources/lvl2.png" width="400" title="Error heatmap before calibration" /> 
+</p>
+<p align="center">
+  <img src="Resources/lvl3.png" width="400" title="Error heatmap before calibration" /> 
+  <img src="Resources/lvl4_1.png" width="400" title="Error heatmap before calibration" />
+</p>
+

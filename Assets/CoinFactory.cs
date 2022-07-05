@@ -45,7 +45,7 @@ public class CoinFactory : MonoBehaviour
             // Debug.Log("Coin Count: " + coinCount);
             instantiatePosition =  Player.position.x + 1000;
             float spawnHight = 0;
-            if(SceneManager.GetActiveScene().buildIndex == 4){
+            if(SceneManager.GetActiveScene().buildIndex == 5){
                    spawnHight = 180;
             }
             else{

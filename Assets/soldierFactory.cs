@@ -46,7 +46,7 @@ public class soldierFactory : MonoBehaviour
             Debug.Log("soldier Count: " + soldierCount);
             instantiatePosition =  Player.position.x + 1000;
              float spawnHight = 0;
-            if(SceneManager.GetActiveScene().buildIndex == 4){
+            if(SceneManager.GetActiveScene().buildIndex == 5){
                    spawnHight = 180;
             }
             else{
