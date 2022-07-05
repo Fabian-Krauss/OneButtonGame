@@ -40,6 +40,7 @@ public class PlayerMovment : MonoBehaviour
     public GameObject enemyIdicator_s;
     public float distandNotShowAnything = 200;
     private float distanceToBorder = 720;
+    public bool isNearCanon = false;
     // private float rainbowSpeed = 0.1f;
     // private float rainbowTime = 0.0f;
 
@@ -108,7 +109,7 @@ public class PlayerMovment : MonoBehaviour
         else if(hit.transform.gameObject.name != "ground")
         {
             if (!DEBUG){
-                if(!beerScript.zerfickerModus){
+                if(!beerScript.zerfickerModus && !isNearCanon){
                     dieSound.Play();
 
                     //stop player

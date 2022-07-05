@@ -29,9 +29,11 @@ public class Cannon : MonoBehaviour
             playerMovment.enableJump = false;
             Debug.Log("Player is near the cannon");
             bar.gameObject.SetActive(true);
+            playerMovment.isNearCanon = true;
         }else{
             bar.gameObject.SetActive(false);
             playerMovment.enableJump = true;
+            playerMovment.isNearCanon = false;
         }
         if (barScript.slider.value == 1)
         {
