@@ -42,10 +42,10 @@ Ein weiterer Vorteil hierbei ist, dass wir nun das bereitgestellte Asset-Set nut
 
 **21.06.22**
 
-- Erzeugung von Collectables in Form von Coins, die beim Einsammeln den Score erhöhen
+- Erzeugung von Collectables in Form von Coins, die beim Einsammeln den Score um 100 erhöhen
 - Implementierung einer "CoinFactory", die in zufälligen Zeitabständen neue Coins erstellt, die kurz hinter dem Bildrand spawnen
 - Erzeugung von Skeletten als bewegliche Hindernisse/Gegner
-  - die Skelette wechseln in zufälligen Zeitabständen die Bewegungsrichtung und kollidieren nicht mit Kisten 
+  - die Skelette wechseln in zufälligen Zeitabständen die Bewegungsrichtung und kollidieren nicht mit Kisten. Diese Zeitabstände können im Scene Tab angepasst werden und können somit zwischen verschiedenen Level geändert werden. 
 - Anwendung des Factory-Prinzips auf Kisten und Skelette, sodass auch diese nun zufällig erstellt werden
   - für jeden Objekttyp wurde ein eigenes Factory-Skript erstellt und die relevanten Variablen so deklariert, dass sie bequem aus der Unity-GUI geändert werden können
 - Hinzufügen eines DEBUG-Modus, in dem man nicht mit Hindernissen kollidiert (vereinfacht das Testen des Spiels)
@@ -58,14 +58,24 @@ Ein weiterer Vorteil hierbei ist, dass wir nun das bereitgestellte Asset-Set nut
 - neue Assets für Fässer und Boxen/Kisten als zusätzliche Hindernisse mit eigens ausgeschnittenem Sprite
 - rollende Fässer hinzugefügt und ebenfalls mit einem Factory-Skript versehen, sodass sie zufällig generiert werden können
   - die Fässer rollen auf den Spieler zu und überrollen dabei auch alle Skelette, die ihnen in den Weg kommen (allerdings kein Einfluss auf Kisten)
-- Hinzufügen einer Kanone mit Ladebalken, welcher in der linken oberen Ecke platziert ist. Dieser füllt sich, wenn der Spieler in der Nähe der Kanone ist und die Leertaste 1 Sekunde lang gedrückt hält 
+- Hinzufügen einer Kanone mit Ladebalken, welcher in der linken oberen Ecke platziert ist. Dieser füllt sich, wenn der Spieler in der Nähe der Kanone ist und die Leertaste 0.5 Sekunde lang gedrückt hält . Der Ladebalken besteht aus einem modifizierten Slider GameObject. 
   - ist der Ladebalken voll und wird die Leertaste losgelassen, schießt eine Kanonenkugel auf das unüberwindbare Hinderniss, welches hinter der Kanone platziert ist
     - lässt der Spieler die Leertaste nicht los, wird die Kugel spätestens dann abgefeuert, wenn der Spieler auf Höhe der Kanone ist
   - die Kugel fällt aufgrund der Gravitation auf den Boden, wo sie dann zerstört wird. Somit ergibt sich eine "natürliche Grenze" für die Schussweite 
 - Hinzufügen von Musik & Tönen für verschiedene Aktionen
-  - **TODO: Erklärung**
-- Implementierung des Double Jumps
-  - wenn der Spieler sich in der Luft befindet, kann er einmalig durch Drücken der Leertaste "erneut springen". Hierbei wird die aktuelle Position und Geschwindigkeit in der Luft benutzt und ausgehend davon, ein neuer Sprung ausgeführt
+  - Diese werden mit dem PlayerSkript verbunden und abgespielt, wenn die jeweilige Aktion eintritt. 
+- Implementierung des Double Jumps. 
+Pseudocode Double Jump:
+
+if(playerIsNotGroundet und SpaceBar gedrückt und doubleJump ){
+	Set current velocity to 0
+	Add initial jump force
+	doubleJump = flase
+	play double jump sound
+}
+
+  - wenn der Spieler sich in der Luft befindet, kann er einmalig durch Drücken der Leertaste "erneut springen". Hierbei wird die aktuelle Position n der Luft benutzt und ausgehend davon, ein neuer Sprung ausgeführt. Vorher wird die vertikalgeschwindigkeit auf 0 gesetzt. Dadurch ergibt sich ein natürlicheres Sprunggefühl.
+  
   - ein zweiter Sprung am Ende der Flugphase ist also genauso effektiv, wie ein zweiter Sprung direkt nach dem Ersten 
 
 Somit ist Aufgabe 2 abgeschlossen und für das Abschließen von Aufgabe 3 fehlt nur noch das weitere Interactable.
@@ -73,7 +83,7 @@ Somit ist Aufgabe 2 abgeschlossen und für das Abschließen von Aufgabe 3 fehlt 
 ### Aufgabe 3 & 4
 **28.06.22**
 
-- als zweites Interactable wurde ein Glas Bier hinzugefügt, das durch Halten der Leertaste eingesammelt werden kann und den Spieler für 5 Sekunden unsterblich macht
+- als zweites Interactable wurde ein Glas Bier hinzugefügt, das durch Halten der Leertaste eingesammelt werden kann und den Spieler für 5 Sekunden unsterblich macht. Der mechanismus dahinter zum aktivieren des Biers ist exakt der selbe, wie bei der Kanone.
   - in diesem Modus werden alle Objekte, mit denen der Spieler normalerweise kollidiert wäre, zerstört
 
 Mit diesem Item ist Aufgabe 3 abgeschlossen! :)
@@ -81,7 +91,7 @@ Mit diesem Item ist Aufgabe 3 abgeschlossen! :)
 - Hinzufügen von Marinesoldaten, die auf den Spieler zulaufen und in zufälligen Abständen mit ihrer Pistole schießen
   - die Kugel wird nicht von der Schwerkraft beeinflusst und fliegt mit konstanter Gesschwindigkeit durch alle Hindernisse hindurch ohne mit ihnen zu interagieren
 - wie bei den anderen Hindernissen, werden auch die Marinesoldaten mittels einer Factory in zufälligen Zeitabständen erzeugt
-- um die Kanone aus Aufgabe 3 wurde eine "Sperrzone" eingerichtet, in der keine Gegner spawnen können, sodass das Interactable nicht beeinträchtigt wird
+- um die Kanone aus Aufgabe 3 wurde eine "Sperrzone" eingerichtet, in der keine Gegner spawnen können, sodass das Interactable nicht beeinträchtigt wird. Falls doch ein gegner in die Zone läuft (z.b. Soldat), wird der spieler in einer gewissen Zone um das Interactable nicht getötet, da er sich auf die Aktivierung des Interactables konzentrieren soll. 
 - verschiedene Deko-Elemente wurden zum ersten Level hinzugefügt
   - neue Assets für Fische, Muscheln, Steine, Schatzkarte und Schatztruhe
 - Ausarbeitung einer Geschichte für das Spiel und Implementierung des Spielendes im ersten Level
@@ -104,6 +114,7 @@ An festen Zielen fehlt uns somit nur noch die farbliche Vorwarnung des Spielers 
   - blauer Streifen: bewegliche Hindernisse (Skelette, Fässer)
   - roter Streifen: schießende Gegner (Marinesoldaten)
   - die Streifen sind nebeneinander angeordnet, sodass auch mehrere Hindernisse parallel angezeigt werden können
+- Implementiert wurde dies, indem wir uns alle Objekte in Spiel in einer liste gespeichert haben. Danach sind wir diese Liste durch gegangen und haben dabei nur Objekte beachtet, die vor uns liegen (und zwar max. 200 Einheiten vor uns). Dabei haben wir geschaut, ob die jeweiligen Objektypen (still, beweglich, schießen) in dieser Liste vorkommen. Für jeden Typ wurde eine Booleanvarible angelegt. Entsprechend dieser Booleans wird im nächsten Schritt der jeweilige Balken ein oder ausgeblendet.
 
 Hiermit ist Aufgabe 4 abgeschlossen! :)
 
@@ -115,7 +126,7 @@ Hiermit ist Aufgabe 4 abgeschlossen! :)
   - Münzen aufsammeln
   - Tod des Spielers
   - Hintergrundmusik
-- als weitere Spielmechanik wurde eine abnehmende Lebensanzeige hinzugefügt, die durch das Aufsammeln von Zitronen wieder aufgefüllt werden muss
+- als weitere Spielmechanik wurde eine abnehmende Lebensanzeige hinzugefügt, die durch das Aufsammeln von Zitronen wieder aufgefüllt werden muss. Die anzeige ist nach 30 Sekunden auf 0 angekommen.
 
 <p align="center">
   <img src="Resources/health_bar.png" width="400" title="Error heatmap before calibration" /> 
@@ -123,9 +134,13 @@ Hiermit ist Aufgabe 4 abgeschlossen! :)
 
   - sammelt der Pirat zu wenige Zitronen ein, erkrankt er an Skorbut und stirbt
   - die Zitronen werden ebenfalls manuell im Spiel platziert
-- Verbesserung des Menüs und des Endscreens
-  - zusätzlich zum Score wird nun auch der erreichte Fortschritt im Level angezeigt
-  **Bild Endscreen**
+  - pro eingesammelter Zitrone bekommt der Spieler 25% seiner Lebensanzeige zurück (ggf. weniger, wenn Lebensanzeige > 75% Voll).
+-   Verbesserung des Menüs und des Endscreens
+  - zusätzlich zum Score wird nun auch der erreichte Fortschritt im Level angezeigt. Dieser wird einfach aus der x-position des spielers geteilt durch die gesammtlänge des Levels ermittelt. Alle Level sind in unserem Fall gleich lange, daher ist hier keine unterscheidung zwische den Leveln nötig. 
+ - Eine schwierigkeit die hier aufgetreten ist, was dass Variablen nicht einfach zwischen Szenen weitergegeben werden können. Daher haben wir ein ScriptableObject erstellt, mit dem wir den Score und die Player position zwischen Endszene und Levek hin und her geben können. 
+<p align="center">
+  <img src="Resources/endscreen.png" width="400" title="Error heatmap before calibration" /> 
+</p>
 
 - Erstellung eines zweiten Levels, das in "Blackbeard´s Hölle" spielt
   - in der Hölle kann der Spieler durch Lücken im Boden fallen und stirbt
@@ -141,7 +156,7 @@ Hiermit ist Aufgabe 4 abgeschlossen! :)
   - drittes Level spielt im Himmel und enthält Wolkentexturen und Engel anstatt von Skeletten. Die Kisten wurden durch goldene Harfen ersetzt.
   - viertes Level spielt am Hafen von Boston, am Ende erhät der Pirat den finalen Hinweis für den Aufenthaltsort seines Papageis
   - das finale fünfte Level spielt auf dem Schiff der Marinesoldaten
-    - die Soldaten schießen nun häufiger, dafür existieren keine Skelette mehr. Es gibt also Fässer, Kisten und Soldaten als Hindernisse bzw. Gegner
+    - die Soldaten schießen nun häufiger und spwanen etwas 2 mal häufiger als in allen anderen Level, dafür existieren keine Skelette mehr. Es gibt also Fässer, Kisten und Soldaten als Hindernisse bzw. Gegner.
     - der Pirat läuft zu Beginn auf das Schiff und der Rest des Levels ist leicht erhöht (im Vergleich zu den vorigen Leveln)
   
 Damit ist die letzte Aufgabe ebenfalls abgeschlossen und das Spiel ist fertig! :)
