@@ -26,7 +26,8 @@ Das fertige Spiel wurde auf Unity Play veröffentlicht und kann hier gespielt we
   - der Score wird im Spiel in einem Textfeld angezeigt, das der Bewegung des Players folgt.
 
 <p align="center">
-  <img src="Resources/day1.png" width="600"/> 
+  <img src="Resources/day1.png" width="600"
+  title="Experimente mit Unity und einem 3D Game design Ansatz"/> 
 </p>
 
 Mit diesen Ergebnissen wurde Aufgabe 1 erfolgreich abgeschlossen! :)
@@ -39,7 +40,8 @@ Ein weiterer Vorteil hiervon ist, dass wir nun das bereitgestellte Asset-Set nut
 
 
 <p align="center">
-  <img src="Resources/day2.png" width="600"/> 
+  <img src="Resources/day2.png" width="600"
+  title="Erster Test mit 2D Game design"/> 
 </p>
 
 **21.06.22**
@@ -67,7 +69,7 @@ Ein weiterer Vorteil hiervon ist, dass wir nun das bereitgestellte Asset-Set nut
   
   **TODO: Bild von Kanone mit unüberwindbarem Hindernis**
 <p align="center">
-  <!--- img src="neuesBild" width="400"/ -->
+  <img src="Resources/kanone_und_hindernis.png" width="400" title="Hindernis, welches zum überwinden mit der Kanone zerstört werden muss."/>
 </p>
   
 - Hinzufügen von Musik & Tönen für verschiedene Aktionen
@@ -101,7 +103,8 @@ Mit diesem Item ist Aufgabe 3 abgeschlossen! :)
   - die Kugel wird nicht von der Schwerkraft beeinflusst und fliegt mit konstanter Gesschwindigkeit durch alle Hindernisse hindurch ohne mit ihnen zu interagieren.
 
 <p align="center">
-  <img src="Resources/day3.png" width="400"/>
+  <img src="Resources/day3.png" width="400"
+  title="Gegner die schießen können"/>
 </p>
 
 - wie bei den anderen Hindernissen, werden auch die Marinesoldaten mittels einer Factory in zufälligen Zeitabständen erzeugt.
@@ -113,7 +116,8 @@ Mit diesem Item ist Aufgabe 3 abgeschlossen! :)
   - über die Schatzkarte gelangt man in den Endscreen eines jeden Levels, in dem die Geschichte fortgesetzt und der Score angezeigt wird.
 
 <p align="center">
-  <img src="Resources/schatzkarte.png" width="300"/>
+  <img src="Resources/schatzkarte.png" width="300"
+  title="Schatzkarten die eine Story erzählen"/>
 </p>
   
 An festen Zielen fehlt uns somit nur noch die farbliche Vorwarnung des Spielers über Hindernisse am rechten Bildschirmrand und die Implementierung bzw. Verbesserung der Sounds im Spiel. Abschließend werden dann die restlichen vier Spiellevel erstellt.
@@ -145,7 +149,8 @@ Hiermit ist Aufgabe 4 abgeschlossen! :)
   - pro eingesammelter Zitrone wird die Lebensanzeige des Spielers um 25% aufgefüllt (ggf. weniger, wenn die Lebensanzeige bereits über 75% voll ist).
   
 <p align="center">
-  <img src="Resources/health_bar.png" width="400"/> 
+  <img src="Resources/health_bar.png" width="400"
+  title="Lebensbalken des Spielers"/> 
 </p>
 
 -   Verbesserung des Menüs und des Endscreens
@@ -153,7 +158,8 @@ Hiermit ist Aufgabe 4 abgeschlossen! :)
  - Eine Schwierigkeit die hierbei aufgetreten ist, dass Variablen nicht einfach zwischen Szenen weitergegeben werden können. Daher haben wir ein ScriptableObject erstellt, mit dem wir den Score und die Position des Spielers zwischen der Endszene und der Levelszene teilen können.
  
 <p align="center">
-  <img src="Resources/endscreen.png" width="400"/> 
+  <img src="Resources/endscreen.png" width="400"/
+  title="Endscreen nach einem Level"> 
 </p>
 
 - Erstellung eines zweiten Levels, das in "Blackbeard´s Hölle" spielt.
@@ -188,10 +194,17 @@ Abschließend kommen nun ein paar Screenshots aus den fertigen Leveln:
 **TODO: Bild Level 1** <br>
 **TODO: Bild Level 5**
 <p align="center">
-  <img src="Resources/lvl2.png" width="400"/> 
+  <img src= "Resources/lvl1.png" width="400" title="Level 1 (Beach)">
+  <img src="Resources/lvl2.png" width="400"
+  title="Level 2 (Nether)"/> 
 </p>
 <p align="center">
-  <img src="Resources/lvl3.png" width="400"/> 
-  <img src="Resources/lvl4_1.png" width="400"/>
+  <img src="Resources/lvl3.png" width="400"
+  title="Level 3 (Heaven)"/> 
+  <img src="Resources/lvl4_1.png" width="400"
+  title="Level 4 (Port City)"/>
 </p>
-
+<p align="center">
+  <img src="Resources/lvl5.png" width="400"
+  title="Level 5 (Ship)"/> 
+</p>
