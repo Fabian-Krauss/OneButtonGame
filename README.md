@@ -67,12 +67,14 @@ Ein weiterer Vorteil hierbei ist, dass wir nun das bereitgestellte Asset-Set nut
 - Implementierung des Double Jumps. 
 Pseudocode Double Jump:
 
-if(playerIsNotGroundet und SpaceBar gedrückt und doubleJump ){
-	Set current velocity to 0
-	Add initial jump force
-	doubleJump = flase
-	play double jump sound
+```
+if(playerIsNotGroundet und SpaceBar gedrückt und doubleJump ){  
+	Set current velocity to 0  
+	Add initial jump force  
+	doubleJump = flase  
+	play double jump sound  
 }
+```
 
   - wenn der Spieler sich in der Luft befindet, kann er einmalig durch Drücken der Leertaste "erneut springen". Hierbei wird die aktuelle Position n der Luft benutzt und ausgehend davon, ein neuer Sprung ausgeführt. Vorher wird die vertikalgeschwindigkeit auf 0 gesetzt. Dadurch ergibt sich ein natürlicheres Sprunggefühl.
   
@@ -84,6 +86,7 @@ Somit ist Aufgabe 2 abgeschlossen und für das Abschließen von Aufgabe 3 fehlt 
 **28.06.22**
 
 - als zweites Interactable wurde ein Glas Bier hinzugefügt, das durch Halten der Leertaste eingesammelt werden kann und den Spieler für 5 Sekunden unsterblich macht. Der mechanismus dahinter zum aktivieren des Biers ist exakt der selbe, wie bei der Kanone.
+- Die Anzeige zum Aufladen des Balkens, wird allerding wieder verwendet und zeigt an, wie lange der "Unzerstörbar"-Modus noch aktiv ist. Dabei wird einfach in jedem Update die time.deltaTime von einer fixen Aktivzeit abgezogen und der Agezeigte Wert angepasst.
   - in diesem Modus werden alle Objekte, mit denen der Spieler normalerweise kollidiert wäre, zerstört
 
 Mit diesem Item ist Aufgabe 3 abgeschlossen! :)
