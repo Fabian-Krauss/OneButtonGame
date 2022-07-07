@@ -86,19 +86,19 @@ public class PlayerMovment : MonoBehaviour
         if(hit.transform.gameObject.name == "schatzkarte"){
               switch (SceneManager.GetActiveScene().buildIndex)
               {
-                  case 0:
+                  case 1:
                                 SceneManager.LoadScene("SchatzkartenScene");
                   break;
-                  case 1:
+                  case 2:
                                 SceneManager.LoadScene("SchatzkartenScene2");
                   break;
-                  case 2:
+                  case 3:
                                 SceneManager.LoadScene("SchatzkartenScene3");
                   break;
-                  case 3:
+                  case 4:
                                 SceneManager.LoadScene("SchatzkartenScene4");
                   break;
-                  case 4:
+                  case 5:
                                 SceneManager.LoadScene("SchatzkartenScene5");
                   break;
                   
