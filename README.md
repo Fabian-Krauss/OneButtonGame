@@ -1,8 +1,9 @@
 # OneButtonGame
 
 ## Dev-Diary
-Dies ist das "Developer Diary" von Lars Gudjons, Tim Maier und Fabian Krauß für das One-Button-Game "**XYZ**", das im Rahmen des Serious Games Moduls an der TU Darmstadt im Sommersemester 2022 entwickelt wurde. <br>
-Das fertige Spiel wurde auf Unity Play veröffentlicht und kann hier gespielt werden: https://play.unity.com/LINK-LINK-LINK
+Dies ist das "Developer Diary" von Lars Gudjons, Tim Maier und Fabian Krauß für das One-Button-Game "**Find Jack's Sparrow**", das im Rahmen des Serious Games Moduls an der TU Darmstadt im Sommersemester 2022 entwickelt wurde.
+Ziel des Spiels ist es, Jack´s verschwundenen Vogel zu retten.\
+Das fertige Spiel wurde auf Unity Play veröffentlicht und kann hier gespielt werden: https://play.unity.com/mg/other/find-jack-s-sparrow
 
 ### Aufgabe 1
 **31.05.22**
@@ -27,7 +28,7 @@ Das fertige Spiel wurde auf Unity Play veröffentlicht und kann hier gespielt we
 
 <p align="center">
   <img src="Resources/day1.png" width="600"
-  title="Experimente mit Unity und einem 3D Game design Ansatz"/> 
+  title="Experimente mit Unity und einem 3D Game Design Ansatz"/> 
 </p>
 
 Mit diesen Ergebnissen wurde Aufgabe 1 erfolgreich abgeschlossen! :)
@@ -41,7 +42,7 @@ Ein weiterer Vorteil hiervon ist, dass wir nun das bereitgestellte Asset-Set nut
 
 <p align="center">
   <img src="Resources/day2.png" width="600"
-  title="Erster Test mit 2D Game design"/> 
+  title="Erster Test mit 2D Game Design"/> 
 </p>
 
 **21.06.22**
@@ -67,15 +68,14 @@ Ein weiterer Vorteil hiervon ist, dass wir nun das bereitgestellte Asset-Set nut
     - lässt der Spieler die Leertaste nicht los, wird die Kugel spätestens dann abgefeuert, wenn der Spieler auf Höhe der Kanone ist.
   - die Kugel fällt aufgrund der Gravitation auf den Boden, wo sie dann zerstört wird. Somit ergibt sich eine "natürliche Grenze" für die Schussweite.
   
-  **TODO: Bild von Kanone mit unüberwindbarem Hindernis**
 <p align="center">
-  <img src="Resources/kanone_und_hindernis.png" width="400" title="Hindernis, welches zum überwinden mit der Kanone zerstört werden muss."/>
+  <img src="Resources/kanone_und_hindernis.png" width="400" title="Hindernis, welches zum Überwinden mit der Kanone zerstört werden muss."/>
 </p>
   
 - Hinzufügen von Musik & Tönen für verschiedene Aktionen
   - Diese werden mit dem PlayerSkript verbunden und abgespielt, wenn die jeweilige Aktion eintritt. 
 - Implementierung des Double Jumps
-  - wenn der Spieler sich in der Luft befindet, kann er einmalig durch Drücken der Leertaste "erneut springen". Hierbei wird die aktuelle Position n der Luft benutzt und ausgehend davon, ein neuer Sprung ausgeführt. Vorher wird die Vertikalgeschwindigkeit auf 0 gesetzt. Dadurch ergibt sich ein natürlicheres Sprunggefühl.
+  - wenn der Spieler sich in der Luft befindet, kann er einmalig durch Drücken der Leertaste "erneut springen". Hierbei wird die aktuelle Position in der Luft benutzt und ausgehend davon, ein neuer Sprung ausgeführt. Vorher wird die Vertikalgeschwindigkeit auf 0 gesetzt. Dadurch ergibt sich ein natürlicheres Sprunggefühl.
   - ein zweiter Sprung am Ende der Flugphase ist also genauso effektiv, wie ein zweiter Sprung direkt nach dem Ersten.
 
 Als Pseudocode:
@@ -104,7 +104,7 @@ Mit diesem Item ist Aufgabe 3 abgeschlossen! :)
 
 <p align="center">
   <img src="Resources/day3.png" width="400"
-  title="Gegner die schießen können"/>
+  title="Gegner, die schießen können."/>
 </p>
 
 - wie bei den anderen Hindernissen, werden auch die Marinesoldaten mittels einer Factory in zufälligen Zeitabständen erzeugt.
@@ -117,7 +117,7 @@ Mit diesem Item ist Aufgabe 3 abgeschlossen! :)
 
 <p align="center">
   <img src="Resources/schatzkarte.png" width="300"
-  title="Schatzkarten die eine Story erzählen"/>
+  title="Schatzkarten, die eine Story erzählen."/>
 </p>
   
 An festen Zielen fehlt uns somit nur noch die farbliche Vorwarnung des Spielers über Hindernisse am rechten Bildschirmrand und die Implementierung bzw. Verbesserung der Sounds im Spiel. Abschließend werden dann die restlichen vier Spiellevel erstellt.
@@ -159,7 +159,7 @@ Hiermit ist Aufgabe 4 abgeschlossen! :)
  
 <p align="center">
   <img src="Resources/endscreen.png" width="400"/
-  title="Endscreen nach einem Level"> 
+  title="Endscreen nach jedem Level."> 
 </p>
 
 - Erstellung eines zweiten Levels, das in "Blackbeard´s Hölle" spielt.
@@ -191,8 +191,7 @@ Damit ist die letzte Aufgabe ebenfalls abgeschlossen und das Spiel ist fertig! :
 
 Abschließend kommen nun ein paar Screenshots aus den fertigen Leveln:
 
-**TODO: Bild Level 1** <br>
-**TODO: Bild Level 5**
+
 <p align="center">
   <img src= "Resources/lvl1.png" width="400" title="Level 1 (Beach)">
   <img src="Resources/lvl2.png" width="400"
@@ -202,7 +201,7 @@ Abschließend kommen nun ein paar Screenshots aus den fertigen Leveln:
   <img src="Resources/lvl3.png" width="400"
   title="Level 3 (Heaven)"/> 
   <img src="Resources/lvl4_1.png" width="400"
-  title="Level 4 (Port City)"/>
+  title="Level 4 (Port of Boston)"/>
 </p>
 <p align="center">
   <img src="Resources/lvl5.png" width="400"
