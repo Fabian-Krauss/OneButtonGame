@@ -1,20 +1,21 @@
-# OneButtonGame
+# Find Jack's Sparrow
 
 ## Dev-Diary
+
 Dies ist das "Developer Diary" von Lars Gudjons, Tim Maier und Fabian Krauß für das One-Button-Game "**Find Jack's Sparrow**", das im Rahmen des Serious Games Moduls an der TU Darmstadt im Sommersemester 2022 entwickelt wurde.
 Ziel des Spiels ist es, Jack´s verschwundenen Vogel zu retten.\
 Das fertige Spiel wurde auf Unity Play veröffentlicht und kann hier gespielt werden: https://play.unity.com/mg/other/find-jack-s-sparrow
 
 ### Aufgabe 1
+
 **31.05.22**
 
 - Download von Unity und Erstellen eines 3D Projektes
 
-
 **14.06.22**
 
 - Erstellen einer Kamera und eines Zylinders, der den Player symbolisiert.
-	- Kamera ist an die Player-Position geheftet und folgt ihm
+  - Kamera ist an die Player-Position geheftet und folgt ihm
 - Player bewegt sich mit konstanter Geschwindigkeit nach rechts.
 - verschiedene Piraten-Assets hinzugefügt
   - anfängliche Probleme beim Import, da mehrere Scenes den gleichen Namen hatten
@@ -34,14 +35,14 @@ Das fertige Spiel wurde auf Unity Play veröffentlicht und kann hier gespielt we
 Mit diesen Ergebnissen wurde Aufgabe 1 erfolgreich abgeschlossen! :)
 
 ### Aufgabe 2
+
 **15.06.22**
 
 Nach mehreren Problemen mit der Ausrichtung von Objekten in Relation zur Kamera haben wir uns entschlossen, ein neues Projekt in 2D zu erstellen und die bisherigen Ergebnisse auf das neue Projekt zu übertragen.
 Ein weiterer Vorteil hiervon ist, dass wir nun das bereitgestellte Asset-Set nutzen können.
 
-
 <p align="center">
-  <img src="Resources/day2.png" width="600"
+  <img src="Resources/day2.png" width="500"
   title="Erster Test mit 2D Game Design"/> 
 </p>
 
@@ -55,7 +56,14 @@ Ein weiterer Vorteil hiervon ist, dass wir nun das bereitgestellte Asset-Set nut
   - für jeden Objekttyp wurde ein eigenes Factory-Skript erstellt und die relevanten Variablen so deklariert, dass sie bequem aus der Unity-GUI geändert werden können.
 - Hinzufügen eines DEBUG-Modus, in dem man nicht mit Hindernissen kollidiert (vereinfacht das Testen des Spiels).
 
+<p align="center">
+
+<img title="Einstellugen in Unity." src="Resources/factories.png" alt="" width="268" data-align="center">
+
+<div style="page-break-after: always;"></div>
+
 ### Aufgabe 2 & 3
+
 **22.06.2022**
 
 - Münzen drehen sich jetzt um die z-Achse.
@@ -67,34 +75,34 @@ Ein weiterer Vorteil hiervon ist, dass wir nun das bereitgestellte Asset-Set nut
   - ist der Ladebalken voll und wird die Leertaste losgelassen, schießt eine Kanonenkugel auf das unüberwindbare Hinderniss, welches hinter der Kanone platziert ist
     - lässt der Spieler die Leertaste nicht los, wird die Kugel spätestens dann abgefeuert, wenn der Spieler auf Höhe der Kanone ist.
   - die Kugel fällt aufgrund der Gravitation auf den Boden, wo sie dann zerstört wird. Somit ergibt sich eine "natürliche Grenze" für die Schussweite.
-  
+
 <p align="center">
   <img src="Resources/kanone_und_hindernis.png" width="400" title="Hindernis, welches zum Überwinden mit der Kanone zerstört werden muss."/>
 </p>
-  
+
 - Hinzufügen von Musik & Tönen für verschiedene Aktionen
   - Diese werden mit dem PlayerSkript verbunden und abgespielt, wenn die jeweilige Aktion eintritt. 
 - Implementierung des Double Jumps
   - wenn der Spieler sich in der Luft befindet, kann er einmalig durch Drücken der Leertaste "erneut springen". Hierbei wird die aktuelle Position in der Luft benutzt und ausgehend davon, ein neuer Sprung ausgeführt. Vorher wird die Vertikalgeschwindigkeit auf 0 gesetzt. Dadurch ergibt sich ein natürlicheres Sprunggefühl.
   - ein zweiter Sprung am Ende der Flugphase ist also genauso effektiv, wie ein zweiter Sprung direkt nach dem Ersten.
 
-Als Pseudocode:
 ```
-if (playerIsNotGrounded und spaceBarIsPressed und doubleJump) {  
-	set current velocity to 0  
-	add initial Jump Force  
-	doubleJump = false  
-	play Double Jump Sound  
+if (playerIsNotGrounded & spaceBarIsPressed & doubleJump) {  
+    current_velocity = 0  
+    add initial Jump Force  
+    doubleJump = false  
+    play Double Jump Sound  
 }
 ```
 
 Somit ist Aufgabe 2 abgeschlossen und für das Abschließen von Aufgabe 3 fehlt nur noch das weitere Interactable.
 
 ### Aufgabe 3 & 4
+
 **28.06.22**
 
 - als zweites Interactable wurde ein Glas Bier hinzugefügt, das durch Halten der Leertaste eingesammelt werden kann und den Spieler für 5 Sekunden unsterblich macht. Zum Aktivieren dieses Effekts muss der Spieler, wie bei der Kanone, durch Halten der Leertaste einen Ladebalken aufladen.
-	- Die Anzeige zum Aufladen des Balkens, wird hierbei wiederverwendet und zeigt an, wie lange der unsterbliche Modus noch aktiv ist. Dafür wird in jedem Update() die time.deltaTime von einer fixen Aktivzeit abgezogen und der angezeigte Wert angepasst.
+  - Die Anzeige zum Aufladen des Balkens, wird hierbei wiederverwendet und zeigt an, wie lange der unsterbliche Modus noch aktiv ist. Dafür wird in jedem Update() die time.deltaTime von einer fixen Aktivzeit abgezogen und der angezeigte Wert angepasst.
 - in diesem Modus werden alle Objekte, mit denen der Spieler normalerweise kollidiert wäre, zerstört.
 
 Mit diesem Item ist Aufgabe 3 abgeschlossen! :)
@@ -115,15 +123,17 @@ Mit diesem Item ist Aufgabe 3 abgeschlossen! :)
   - der Spieler muss in eine Schatzkarte springen, die Hinweise darauf gibt, wo sich der verlorene Papagei des Piraten befindet. Über die 5 Level des Spiels erhält der Pirat nun weitere Hinweise über den Aufenthaltsort und findet schließlich seinen Papagei auf dem Schiff der Marinesoldaten.
   - über die Schatzkarte gelangt man in den Endscreen eines jeden Levels, in dem die Geschichte fortgesetzt und der Score angezeigt wird.
 
+<img title="" src="file:///C:/Users/larsg/OneButtonGame/Resources/verzierung.png" alt="verzierung.png" data-align="center" width="606">
+
 <p align="center">
   <img src="Resources/schatzkarte.png" width="300"
   title="Schatzkarten, die eine Story erzählen."/>
 </p>
-  
+
 An festen Zielen fehlt uns somit nur noch die farbliche Vorwarnung des Spielers über Hindernisse am rechten Bildschirmrand und die Implementierung bzw. Verbesserung der Sounds im Spiel. Abschließend werden dann die restlichen vier Spiellevel erstellt.
 
-
 ### Aufgabe 4 & 5
+
 **29.06.22**
 
 - Hinzufügen von drei farblichen Indikatoren für Gegner/Hindernisse am rechten Bildschirmrand. Sobald ein Hindernis die Entfernung von 200 Einheiten zum rechten Bildschirmrand unterschreitet, wird dies farblich im UI angezeigt.
@@ -147,16 +157,16 @@ Hiermit ist Aufgabe 4 abgeschlossen! :)
   - ohne eingesammelte Zitronen ist die Anzeige nach 30 Sekunden leer und der Pirat stirbt, da er tödlich an Skorbut erkrankt ist.
   - die Zitronen werden ebenfalls manuell im Spiel platziert.
   - pro eingesammelter Zitrone wird die Lebensanzeige des Spielers um 25% aufgefüllt (ggf. weniger, wenn die Lebensanzeige bereits über 75% voll ist).
-  
+
 <p align="center">
   <img src="Resources/health_bar.png" width="400"
   title="Lebensbalken des Spielers"/> 
 </p>
 
--   Verbesserung des Menüs und des Endscreens
+- Verbesserung des Menüs und des Endscreens
   - zusätzlich zum Score wird nun auch der erreichte Fortschritt im Level angezeigt. Dieser wird berechnet, indem die x-Position des Spielers durch die Gesamtlänge des Levels geteilt wird. Alle Level in unserem Spiel sind gleich lang, daher ist hier keine Unterscheidung zwischen den Leveln nötig. 
- - Eine Schwierigkeit die hierbei aufgetreten ist, dass Variablen nicht einfach zwischen Szenen weitergegeben werden können. Daher haben wir ein ScriptableObject erstellt, mit dem wir den Score und die Position des Spielers zwischen der Endszene und der Levelszene teilen können.
- 
+  - Eine Schwierigkeit die hierbei aufgetreten ist, dass Variablen nicht einfach zwischen Szenen weitergegeben werden können. Daher haben wir ein ScriptableObject erstellt, mit dem wir den Score und die Position des Spielers zwischen der Endszene und der Levelszene teilen können.
+
 <p align="center">
   <img src="Resources/endscreen.png" width="400"/
   title="Endscreen nach jedem Level."> 
@@ -168,17 +178,18 @@ Hiermit ist Aufgabe 4 abgeschlossen! :)
   - alle Level sind gleich lang und die Schwierigkeit der ersten vier Level sollte ebenfalls ungefähr gleich sein.
     - das fünfte und finale Level wird etwas anspruchsvoller
   - in jedem Level kommen mindestens eine Kanone und ein Bierkrug als Interactables vor.
-  
+
 ### Aufgabe 5
+
 **05.07.22**
 
 - Level-Design für das dritte, vierte und fünfte Level
   - drittes Level spielt im Himmel und enthält Wolkentexturen und Engel anstatt von Skeletten. Die Kisten wurden durch goldene Harfen ersetzt.
   - viertes Level spielt am Hafen von Boston, am Ende erhält der Pirat den finalen Hinweis für den Aufenthaltsort seines Papageis.
   - das finale fünfte Level spielt auf dem Schiff der Marinesoldaten.
-    - die Soldaten schießen nun häufiger und spawnen in etwa doppelt so häufig wie in den anderen Leveln. Dafür existieren keine Skelette mehr, sodass die Hindernisse bzw. Gegner aus Fässern, Kisten und aggresiveren Soldaten bestehen.
+    - die Soldaten schießen nun häufiger und spawnen in etwa doppelt so häufig wie in den anderen Leveln. Dafür existieren keine Skelette mehr, sodass die Hindernisse bzw. Gegner aus Fässern, Kisten und aggressiveren Soldaten bestehen.
     - der Pirat läuft zu Beginn auf das Schiff und der Rest des Levels ist leicht erhöht (im Vergleich zu den vorigen Leveln).
-  
+
 Damit ist die letzte Aufgabe ebenfalls abgeschlossen und das Spiel ist fertig! :)
 
 **06.07.22**
@@ -186,24 +197,60 @@ Damit ist die letzte Aufgabe ebenfalls abgeschlossen und das Spiel ist fertig! :
 - finale Einstellungen bezüglich Auflösung und Build-Prozess wurden getroffen.
 - Export des Spiels als WebGL und Upload auf Play Unity.
 
-<br>
-<br>
+<img title="Level 5 (Ship)" src="file:///C:/Users/larsg/OneButtonGame/Resources/unity_play.png" alt="" width="562" data-align="center">
 
-Abschließend kommen nun ein paar Screenshots aus den fertigen Leveln:
+### Was wir gelernt haben
 
+Wir haben in diesem Projekt sehr viele neue Dinge gelernt. Wir haben alle das erste mal mit einer Game Engine wie Unity gearbeitet (teilweise hatten wir aber schon ein paar Projekte mit Blender oder anderer 3D Design Software gemacht). Somit mussten wir uns erst einmal einarbeiten. Wir haben dabei hauptsächlich den "learning by doing" Ansatz gewählt. Im nachhinein hätten wir eventuell doch besser ein paar mehr Tutorials ansehen sollen.
+
+Nach einer Einarbeitungsphase hat es jedoch sehr viel Spaß gemacht. Nebenbei hat man durch die Skripte noch ein wenig C# lernen können. Dies war durch Kenntnisse in anderen Programmiersprachen glücklicherweise kein großes Problem.
+
+Beim nächsten mal würden wir jedenfalls einiges anders machen. Beispielsweise würden wir mehr Planen wie die Skript Struktur aussehen sollte und wie Game Objects mit den Skripten interagieren um dies einheitlich zu haben. Ebenfalls würden wir versuchen weniger Skripte zu verwenden und diese besser zu strukturieren. Viele hilfreiche Funktionen, wie beispielsweise den die Tilemaps, in Unity haben wir leider erst zu spät entdeckt beim nächsten Spiel könnte man all diese Punkte umsetzen und deutlich schneller bei der Entwicklung voran kommen.
+
+Vielleicht kann man dieses Wissen nun in einem Zukünftigen Projekt oder Game Jam anwenden :D
+
+<div style="page-break-after: always;"></div>
+
+
+
+Abschließend noch ein Paar Bilder der einzelnen Level:
+
+<br>
 
 <p align="center">
-  <img src= "Resources/lvl1.png" width="400" title="Level 1 (Beach)">
-  <img src="Resources/lvl2.png" width="400"
+  <img src= "Resources/lvl1.png" width="330" title="Level 1 (Beach)">
+  <img src="Resources/lvl2.png" width="330"
   title="Level 2 (Nether)"/> 
 </p>
+
+
+
+
+
+<br>
+
+<br>
+
+<br>
+
+
+
 <p align="center">
-  <img src="Resources/lvl3.png" width="400"
+  <img src="Resources/lvl3.png" width="330"
   title="Level 3 (Heaven)"/> 
-  <img src="Resources/lvl4_1.png" width="400"
+  <img src="Resources/lvl4_1.png" width="330"
   title="Level 4 (Port of Boston)"/>
 </p>
+
+<br>
+
+<br>
+
+<br>
+
 <p align="center">
-  <img src="Resources/lvl5.png" width="400"
+  <img src="Resources/lvl5.png" width="330"
+  title="Level 5 (Ship)"/> 
+ <img src="Resources/lvl5_2.png" width="330"
   title="Level 5 (Ship)"/> 
 </p>
